@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# Don't include temporary results
+/vectorization-intervals/results/*.csv
