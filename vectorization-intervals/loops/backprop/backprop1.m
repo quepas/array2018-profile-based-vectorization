@@ -17,7 +17,7 @@ numValues = length(parameterValues);
 aggregatedMeasurements = zeros(numValues, 3);
 
 for value = 1:numValues
-   n = parameterValues(value)
+   n = parameterValues(value);
    ndelta = 17; % from backprop2: 2049; % default: 17
 
    %% Original code
@@ -76,9 +76,9 @@ for value = 1:numValues
       MOMENTUM = rand(1, 1);
 
       tic();
-      new_dw = ((ETA .* delta(jj) .* ly)' + (MOMENTUM .* oldw(:,jj)));
-      w(:,jj) = w(:,jj) + new_dw;
-      oldw(:,jj) = new_dw;
+      new_dw = ((ETA .* delta(jj) .* ly)' + (MOMENTUM .* oldw(1:nly,jj)));
+      w(1:nly,jj) = w(1:nly,jj) + new_dw;
+      oldw(1:nly,jj) = new_dw;
       measurements(1, r) = toc();
    end
    aggregatedMeasurements(value, 3) = aggregate(measurements(1, :));

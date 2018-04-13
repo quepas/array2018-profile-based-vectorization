@@ -1,9 +1,8 @@
-%% LoopID: backprop2
-loopID = 'backprop2';
+%% LoopID: backprop4
+loopID = 'backprop4';
 % Benchmark: backprop
-% Function: bpnn_hidden_error.m
-% Default: {nh: 17, no: 2}
-% Found: {hidden_n+1: 2049}
+% Function: bpnn_output_error.m
+% Defaults: {nj: 2}
 
 resultsDir = '../../results/';
 addpath('../../helpers/')
@@ -12,25 +11,27 @@ rep = 100;
 % Function aggregating data from repeated measurements
 aggregate = @min;
 % Values of input parameter (data sizes)
-parameterValues = 1:32:4096;
+parameterValues = 1:16:2048;
 numValues = length(parameterValues);
 aggregatedMeasurements = zeros(numValues, 3);
 
 for value = 1:numValues
    n = parameterValues(value);
-   nh = 1000; % not-dependent parameter
 
    %% Original code
    measurements = zeros(1, rep);
    for r = 1:rep
-      s = 0;
-      jj = randi([1, nh], 1, 1);
-      delta_o = rand(1, n);
-      wh = rand(nh, n);
+      output = rand(1, n);
+      target = rand(1, n);
+      delta = rand(1, n);
+      errsum = 0;
 
       tic();
-      for k = 2:n
-         s = s + delta_o(k) * wh(jj,k);
+      for jj = 2:n
+         o = output(jj);
+         t = target(jj);
+         delta(jj) = o * (1.0 - o) * (t - o);
+         errsum = errsum + abs(delta(jj));
       end
       measurements(1, r) = toc();
    end
@@ -39,14 +40,20 @@ for value = 1:numValues
    %% LCPC code
    measurements = zeros(1, rep);
    for r = 1:rep
-      s = 0;
-      jj = randi([1, nh], 1, 1);
-      delta_o = rand(1, n);
-      wh = rand(nh, n);
+      output = rand(1, n);
+      target = rand(1, n);
+      delta = rand(1, n);
+      errsum = 0;
 
       tic();
-      k = colon(2,n);
-      s = plus(s, sum(times(delta_o(k),wh(jj, k))));
+      jj = colon(2,n);
+      o = output(jj);
+      if length(delta)==length(jj)
+         delta=times(times(o,minus(1.0,o)),minus(target(jj),o));
+      else
+         delta(jj)=times(times(o,minus(1.0,o)),minus(target(jj),o));
+      end
+      errsum = plus(errsum,sum(abs(delta(jj))));
       measurements(1, r) = toc();
    end
    aggregatedMeasurements(value, 2) = aggregate(measurements(1, :));
@@ -54,13 +61,15 @@ for value = 1:numValues
    %% HHM code
    measurements = zeros(1, rep);
    for r = 1:rep
-      s = 0;
-      jj = randi([1, nh], 1, 1);
-      delta_o = rand(1, n);
-      wh = rand(nh, n);
+      output = rand(1, n);
+      target = rand(1, n);
+      delta = rand(1, n);
 
       tic();
-      s = sum(delta_o(2:n) .* wh(jj, 2:n));
+      o = output(2:n);
+      t = target(2:n);
+      delta(2:n) = o .* (1.0 - o) .* (t - o);
+      errsum = sum(abs(delta(2:n)));
       measurements(1, r) = toc();
    end
    aggregatedMeasurements(value, 3) = aggregate(measurements(1, :));

@@ -1,9 +1,9 @@
-%% LoopID: backprop2
-loopID = 'backprop2';
+%% LoopID: backprop3
+loopID = 'backprop3';
 % Benchmark: backprop
-% Function: bpnn_hidden_error.m
-% Default: {nh: 17, no: 2}
-% Found: {hidden_n+1: 2049}
+% Function: bpnn_layerforward.m
+% Defaults: {set1: {n1: 2850001, n2: 17}
+%            set2: {n1: 17, n2: 2}}
 
 resultsDir = '../../results/';
 addpath('../../helpers/')
@@ -17,22 +17,24 @@ numValues = length(parameterValues);
 aggregatedMeasurements = zeros(numValues, 3);
 
 for value = 1:numValues
-   n = parameterValues(value);
-   nh = 1000; % not-dependent parameter
+   n = parameterValues(value)
+   n2 = 17; % or 2
 
    %% Original code
    measurements = zeros(1, rep);
    for r = 1:rep
       s = 0;
-      jj = randi([1, nh], 1, 1);
-      delta_o = rand(1, n);
-      wh = rand(nh, n);
+      conn = rand(n, n2);
+      l1 = rand(1, n);
+      jj = randi([1, n2], 1, 1);
 
       tic();
-      for k = 2:n
-         s = s + delta_o(k) * wh(jj,k);
+      for k = 1:n
+         s = s + conn(k, jj) * l1(k);
       end
       measurements(1, r) = toc();
+
+      assert(isscalar(s));
    end
    aggregatedMeasurements(value, 1) = aggregate(measurements(1, :));
 
@@ -40,28 +42,31 @@ for value = 1:numValues
    measurements = zeros(1, rep);
    for r = 1:rep
       s = 0;
-      jj = randi([1, nh], 1, 1);
-      delta_o = rand(1, n);
-      wh = rand(nh, n);
+      conn = rand(n, n2);
+      l1 = rand(1, n);
+      jj = randi([1, n2], 1, 1);
 
       tic();
-      k = colon(2,n);
-      s = plus(s, sum(times(delta_o(k),wh(jj, k))));
+      k = colon(1,n);
+      s = plus(s, sum(times(transpose(conn(k, jj)), l1(k))));
       measurements(1, r) = toc();
+
+      assert(isscalar(s));
    end
    aggregatedMeasurements(value, 2) = aggregate(measurements(1, :));
 
    %% HHM code
    measurements = zeros(1, rep);
    for r = 1:rep
-      s = 0;
-      jj = randi([1, nh], 1, 1);
-      delta_o = rand(1, n);
-      wh = rand(nh, n);
+      conn = rand(n, n2);
+      l1 = rand(1, n);
+      jj = randi([1, n2], 1, 1);
 
       tic();
-      s = sum(delta_o(2:n) .* wh(jj, 2:n));
+      s = sum(conn(1:n, jj) .* l1(1:n)');
       measurements(1, r) = toc();
+
+      assert(isscalar(s));
    end
    aggregatedMeasurements(value, 3) = aggregate(measurements(1, :));
 
