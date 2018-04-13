@@ -2,6 +2,7 @@
 loopID = 'spmv1';
 % Benchmark: spmv
 % Function: spmv_core.m
+% Default: {n: [2, 3]}
 
 resultsDir = '../../results/';
 addpath('../../helpers/')
