@@ -2,6 +2,7 @@
 loopID = 'capr1';
 % Benchmark: capr
 % Function: capacitor.m
+% Default: {n: 8}
 
 resultsDir = '../../results/';
 addpath('../../helpers/')
@@ -21,15 +22,13 @@ for value = 1:numValues
    %% Original code
    measurements = zeros(1, rep);
    for r = 1:rep
-      f = zeros(maximal+1, maximal+1);
-      rel = rand(1, 1);
-      mask = ones(maximal+1, maximal+1) * rel;
-      na = n;
+      f = zeros(maximal, maximal);
+      mask = rand(maximal, maximal);
       mb = floor(n / 2);
 
       tic();
-      for ii=1:na+1
-         for jj=1:mb+1
+      for ii=1:n
+         for jj=1:mb
             mask(ii, jj)=0;
             f(ii, jj)=1;
          end;
@@ -41,15 +40,14 @@ for value = 1:numValues
    %% LCPC code
    measurements = zeros(1, rep);
    for r = 1:rep
-      f = zeros(maximal+1, maximal+1);
-      rel = rand(1, 1);
-      mask = ones(maximal+1, maximal+1) * rel;
-      na = n;
+      f = zeros(maximal, maximal);
+      mask = rand(maximal, maximal);
       mb = floor(n / 2);
 
+
       tic();
-      ii = colon(1,plus(na,1));
-      jj = colon(1,plus(mb,1));
+      ii = colon(1,n);
+      jj = colon(1,mb);
       f(ii, jj) = 1;
       mask(ii, jj) = 0;
       measurements(1, r) = toc();
@@ -59,15 +57,13 @@ for value = 1:numValues
    %% HHM code
    measurements = zeros(1, rep);
    for r = 1:rep
-      f = zeros(maximal+1, maximal+1);
-      rel = rand(1, 1);
-      mask = ones(maximal+1, maximal+1) * rel;
-      na = n;
+      f = zeros(maximal, maximal);
+      mask = rand(maximal, maximal);
       mb = floor(n / 2);
 
       tic();
-      mask(2:(na+1), 2:(mb+1)) = 0;
-      f(2:(na+1), 2:(mb+1)) = 1;
+      mask(2:n, 2:mb) = 0;
+      f(2:n, 2:mb) = 1;
       measurements(1, r) = toc();
    end
    aggregatedMeasurements(value, 3) = aggregate(measurements(1, :));

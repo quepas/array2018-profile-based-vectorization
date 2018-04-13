@@ -2,7 +2,7 @@
 loopID = 'backprop1';
 % Benchmark: backprop
 % Function: bpnn_adjust_weights.m
-% Default: {n: 2850001}
+% Default: {n: [17, 2850001], ndelta: [2, 17]}
 % Found: {n: 497}
 
 resultsDir = '../../results/';

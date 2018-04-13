@@ -2,6 +2,7 @@
 loopID = 'crni1';
 % Benchmark: crni
 % Function: crnich.m
+% Default: {n: 2300, m: 2300}
 
 resultsDir = '../../results/';
 addpath('../../helpers/')

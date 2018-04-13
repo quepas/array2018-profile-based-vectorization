@@ -2,6 +2,7 @@
 loopID = 'crni2';
 % Benchmark: crni
 % Function: crnich.m
+% Default: {n: 2300, m: 2300}
 
 resultsDir = '../../results/';
 addpath('../../helpers/')
@@ -15,7 +16,7 @@ numValues = length(parameterValues);
 aggregatedMeasurements = zeros(numValues, 3);
 
 for value = 1:numValues
-   n = parameterValues(value)
+   n = parameterValues(value);
 
    %% Original code
    measurements = zeros(1, rep);

@@ -2,7 +2,7 @@
 loopID = 'backprop4';
 % Benchmark: backprop
 % Function: bpnn_output_error.m
-% Defaults: {nj: 2}
+% Defaults: {n: 2}
 
 resultsDir = '../../results/';
 addpath('../../helpers/')

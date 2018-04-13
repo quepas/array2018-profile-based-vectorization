@@ -2,6 +2,7 @@
 loopID = 'capr2';
 % Benchmark: capr
 % Function: gauss.m
+% Default: {n: 20, f: [21 x 50]}
 
 resultsDir = '../../results/';
 addpath('../../helpers/')

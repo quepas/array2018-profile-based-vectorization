@@ -2,8 +2,7 @@
 loopID = 'backprop3';
 % Benchmark: backprop
 % Function: bpnn_layerforward.m
-% Defaults: {set1: {n1: 2850001, n2: 17}
-%            set2: {n1: 17, n2: 2}}
+% Defaults: {n: [2850001, 17], n2: [17, 2]}
 
 resultsDir = '../../results/';
 addpath('../../helpers/')
@@ -17,7 +16,7 @@ numValues = length(parameterValues);
 aggregatedMeasurements = zeros(numValues, 3);
 
 for value = 1:numValues
-   n = parameterValues(value)
+   n = parameterValues(value);
    n2 = 17; % or 2
 
    %% Original code

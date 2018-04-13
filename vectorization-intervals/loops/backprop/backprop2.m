@@ -2,7 +2,7 @@
 loopID = 'backprop2';
 % Benchmark: backprop
 % Function: bpnn_hidden_error.m
-% Default: {nh: 17, no: 2}
+% Default: {nh: 17, n: 2}
 % Found: {hidden_n+1: 2049}
 
 resultsDir = '../../results/';
@@ -18,7 +18,7 @@ aggregatedMeasurements = zeros(numValues, 3);
 
 for value = 1:numValues
    n = parameterValues(value);
-   nh = 1000; % not-dependent parameter
+   nh = 17; % not-dependent parameter
 
    %% Original code
    measurements = zeros(1, rep);
