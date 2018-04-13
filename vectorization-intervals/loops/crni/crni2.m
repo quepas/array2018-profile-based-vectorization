@@ -67,6 +67,6 @@ for value = 1:numValues
    aggregatedMeasurements(value, 3) = aggregate(measurements(1, :));
 
 end
-   
-plotResults(parameterValues, aggregatedMeasurements)
+
+plotResults(parameterValues, aggregatedMeasurements, loopID, resultsDir);
 writeResults(parameterValues, aggregatedMeasurements, loopID, resultsDir);

@@ -72,5 +72,5 @@ for value = 1:numValues
 
 end
 
-plotResults(parameterValues, aggregatedMeasurements)
+plotResults(parameterValues, aggregatedMeasurements, loopID, resultsDir);
 writeResults(parameterValues, aggregatedMeasurements, loopID, resultsDir);
