@@ -1,7 +1,7 @@
-%% LoopID: capr2
-loopID = 'capr2';
-% Benchmark: capr
-% Function: gauss.m
+%% LoopID: crni1
+loopID = 'crni1';
+% Benchmark: crni
+% Function: crnich.m
 
 resultsDir = '../../results/';
 addpath('../../helpers/')
@@ -10,25 +10,24 @@ rep = 100;
 % Function aggregating data from repeated measurements
 aggregate = @min;
 % Values of input parameter (data sizes)
-parameterValues = 1:16:4096;
+parameterValues = 1:16:2048;
 numValues = length(parameterValues);
 aggregatedMeasurements = zeros(numValues, 3);
 
 for value = 1:numValues
    n = parameterValues(value);
-   m = 49;
 
    %% Original code
    measurements = zeros(1, rep);
    for r = 1:rep
-      q = 0;
-      f = rand(n+1, m+1);
-      mm = randi([1, m], 1, 1);
+      h = rand(1, 1);
+      U = zeros(n, n);
+      m = randi([1, n], 1, 1);
 
       tic();
-      for ii=1:n
-         q=q+(f(ii, mm)+f(ii+1, mm))*0.5;
-      end;
+      for i1=2:(n-1)
+         U(i1, m)=sin(pi*h*(i1-1))+sin(3*pi*h*(i1-1));
+      end
       measurements(1, r) = toc();
    end
    aggregatedMeasurements(value, 1) = aggregate(measurements(1, :));
@@ -36,13 +35,14 @@ for value = 1:numValues
    %% LCPC code
    measurements = zeros(1, rep);
    for r = 1:rep
-      q = 0;
-      f = rand(n+1, m+1);
-      mm = randi([1, m], 1, 1);
+      C_PI = 3.14159265358979323846;
+      h = rand(1, 1);
+      U = zeros(n, n);
+      m = randi([1, n], 1, 1);
 
       tic();
-      ii = colon(1,n);
-      q = plus(q,sum(times(plus(f(ii, mm),f(plus(ii,1),mm)),0.5)));
+      i1 = colon(2,minus(n,1));
+      U(i1, m) = plus(sin(times(times(C_PI, h),minus(i1,1))),sin(times(times(times(3,C_PI),h),minus(i1,1))));
       measurements(1, r) = toc();
    end
    aggregatedMeasurements(value, 2) = aggregate(measurements(1, :));
@@ -50,12 +50,12 @@ for value = 1:numValues
    %% HHM code
    measurements = zeros(1, rep);
    for r = 1:rep
-      q = 0;
-      f = rand(n+1, m+1);
-      mm = randi([1, m], 1, 1);
+      h = rand(1, 1);
+      U = zeros(n, n);
+      m = randi([1, n], 1, 1);
 
       tic();
-      q = sum(0.5*(f(1:n, mm) + f(2:(n+1), mm)));
+      U(2:(n-1), m)= sin(pi.*h.*(1:(n-2)))+sin(3.*pi.*h.*(1:(n-2)));
       measurements(1, r) = toc();
    end
    aggregatedMeasurements(value, 3) = aggregate(measurements(1, :));
