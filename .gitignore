@@ -59,3 +59,4 @@ typings/
 
 # Don't include temporary results
 /vectorization-intervals/results/*.csv
+/vectorization-intervals/results/*.png
