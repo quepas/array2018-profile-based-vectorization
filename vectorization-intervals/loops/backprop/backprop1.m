@@ -8,7 +8,7 @@ loopID = 'backprop1';
 resultsDir = '../../results/';
 addpath('../../helpers/')
 % Num. of repated measurements
-rep = 10;
+rep = 100;
 % Function aggregating data from repeated measurements
 aggregate = @min;
 % Values of input parameter (data sizes)
