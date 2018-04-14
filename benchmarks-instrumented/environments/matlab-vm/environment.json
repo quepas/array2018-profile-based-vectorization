@@ -1,0 +1,19 @@
+{
+	"type": "environment",
+	"short-name": "matlab-vm",
+	"name": "MATLAB Virtual Machine",
+	"version": "R2015b (8.6.0.267246)",
+	"supported-languages": ["matlab"],
+	"supported-formats": ["text"],
+	"implementation-language": "x86",
+	"implementation-format": "binary",
+	"executable-path": "matlab",
+	"executable-options": [
+		"-nodesktop",
+		"-nodisplay",
+		"-r"
+	],
+	"run-script-options": {
+		"matlab-jit": true
+	}
+}
