@@ -1,0 +1,19 @@
+{
+    "short-name": "cri",
+    "type": "platform",
+    "name": "Linux-4.4.0-119-generic-x86_64-with-Ubuntu-16.04-xenial",
+    "cpu": "Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz",
+    "gpu": [
+        "Intel Corporation Sky Lake Integrated Graphics"
+    ],
+    "memory": "15.5545 GB",
+    "os": "Ubuntu 16.04 xenial",
+    "supported-languages": [
+        "x86_64"
+    ],
+    "supported-formats": [
+        "binary"
+    ],
+    "environments": [],
+    "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/platforms/cri"
+}
