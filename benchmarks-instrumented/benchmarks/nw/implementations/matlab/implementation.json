@@ -1,0 +1,30 @@
+{
+    "type": "implementation",
+    "short-name":"matlab",
+    "description":"Matlab port of C implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./needle.m"}
+    ],
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        {
+            "expand": "/experiment/input-size",
+            "path": "/dimensions"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/penalty"
+        },
+        { "file": "./seq1.data" },
+        { "file": "./seq2.data" }, 
+        { "file": "./nw.data" }
+    ],
+    "libraries":[
+        { "suite-root": "/implementations/matlab/createMatrixFromRandom.m" },
+        { "suite-root": "/implementations/matlab/commonRandomJS.m" },
+        { "suite-root": "/implementations/matlab/commonRandom.m" },
+        { "suite-root": "/implementations/matlab/setRand.m" },
+        { "suite-root": "/implementations/matlab/setRandomSeed.m" }
+    ]
+}

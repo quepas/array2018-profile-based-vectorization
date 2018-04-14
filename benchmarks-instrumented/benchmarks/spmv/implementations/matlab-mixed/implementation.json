@@ -1,0 +1,29 @@
+{
+    "type": "implementation",
+    "short-name":"matlab-mixed",
+    "description":"Matlab port of C implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./spmv_core.m"}
+    ],
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        { 
+            "expand": "/experiment/input-size",
+            "path": "/dimensions"
+        },
+        { 
+            "expand": "/experiment/input-size",
+            "path": "/density"
+        },
+        { 
+            "expand": "/experiment/input-size",
+            "path": "/standard-deviation"
+        },
+        { 
+            "expand": "/experiment/input-size",
+            "path": "/iterations"
+        }
+    ],
+    "libraries":[]
+}

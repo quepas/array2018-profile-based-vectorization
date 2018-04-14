@@ -1,0 +1,23 @@
+{
+   "type": "benchmark",
+   "name":"Needleman-Wunsch",
+   "short-name":"nw",
+   "description":" Needleman-Wunsch is an algorithm for calculating optimal global alignment of two DNA sequences. All-pairs matching is represented by an NxM 2D matrix. Matrix cells are scored from northwestern-most to southeastern-most, depending solely on northern, northeastern, and eastern neighboring scores. Finally, the algorithm backtracks through the array to return an optimal alignment.  Note: This application was ported from the Rodinia Suite (https://www.cs.virginia.edu/~skadron/wiki/rodinia/).",
+   "version":"0.1.0",
+   "input-size":{
+      "small": {
+        "dimensions": 2048,
+        "penalty": 1
+      },
+      "medium": {
+        "dimensions": 4096,
+        "penalty": 1
+      },
+      "large": {
+        "dimensions": 8192,
+        "penalty": 1
+      }
+   },
+   "random-seed":1337,
+   "dwarf": "dynamic programming"
+}

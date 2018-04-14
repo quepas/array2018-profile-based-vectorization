@@ -1,0 +1,17 @@
+{
+  "type": "implementation",
+  "short-name": "matlab",
+  "description": "Matlab implementation for babai",
+  "language": "matlab",
+  "core-source-files":[
+    { "file": "./crnich.m" },
+    { "file": "./tridiagonal.m" }
+  ],
+  "runner-source-file": { "file": "./runner.m" },
+  "runner-arguments":[
+    {"expand": "/experiment/input-size" }
+  ],
+  "runner-argument-types": [
+    "'DOUBLE&1*1&REAL'"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+    "type": "implementation",
+    "short-name":"matlab",
+    "description":"Matlab port of C implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./bp_core.m"},
+       { "file": "./bpnn_adjust_weights.m"},
+       { "file": "./bpnn_hidden_error.m"},
+       { "file": "./bpnn_layerforward.m"},
+       { "file": "./bpnn_output_error.m"}
+    ],
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "libraries":[
+       { "suite-root": "/implementations/matlab/setRandomSeed.m" },
+       { "suite-root": "/implementations/matlab/commonRandom.m" },
+       { "suite-root": "/implementations/matlab/commonRandomJS.m" }
+    ]
+}

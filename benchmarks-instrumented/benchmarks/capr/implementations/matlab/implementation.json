@@ -1,0 +1,19 @@
+{
+  "type": "implementation",
+  "short-name": "matlab",
+  "description": "Matlab implementation for babai",
+  "language": "matlab",
+  "core-source-files":[
+    { "file": "./capacitor.m" },
+    { "file": "./gauss.m" },
+    { "file": "./linspace.m" },
+    { "file": "./seidel.m" }
+  ],
+  "runner-source-file": { "file": "./runner.m" },
+  "runner-arguments":[
+    {"expand": "/experiment/input-size" }
+  ],
+  "runner-argument-types": [
+    "'DOUBLE&1*1&REAL'"
+  ]
+}

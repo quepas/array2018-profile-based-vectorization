@@ -1,0 +1,12 @@
+{
+   "type": "benchmark",
+   "name":"Crank-Nicholson",
+   "short-name":"crni",
+   "description":"Compute the Crank-Nicholson solution to the one-dimensional heat equation",
+   "version":"0.1.0",
+   "input-size":{
+      "small":5,
+      "medium":7,
+      "large": 9
+   }  
+}

@@ -1,0 +1,26 @@
+{
+    "type": "implementation",
+    "short-name":"matlab",
+    "description":"Matlab port of C implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./fft2D.m"},
+       { "file": "./fft2DComplex.m"},
+       { "file": "./fftSimple.m"},
+       { "file": "./fftSimpleComplex.m"}
+    ],
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],
+    "runner-argument-types": [
+      "'DOUBLE&1*1&REAL'"
+    ],
+    "libraries":[
+        { "suite-root": "/implementations/matlab/createMatrixFromRandom.m" },
+        { "suite-root": "/implementations/matlab/commonRandomJS.m" },
+        { "suite-root": "/implementations/matlab/commonRandom.m" },
+        { "suite-root": "/implementations/matlab/setRand.m" },
+        { "suite-root": "/implementations/matlab/setRandomSeed.m" }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+   "type": "benchmark",
+   "name":"Fast Fourier Transform",
+   "short-name":"fft",
+   "description":"Performs the Fast Fourier Transform (FFT) function on a random data set.",
+   "version":"0.1.0",
+   "input-size":{
+      "small": 7,
+      "medium": 8,
+      "large": 9
+   },
+   "random-seed":1337,
+   "dwarf": "spectral methods"
+}

@@ -1,0 +1,12 @@
+{
+   "type": "benchmark",
+   "name":"CAPR",
+   "short-name":"capr",
+   "description":"Compute the capacitance of a transmission line using finite difference and Gauss-Seidel iteration",
+   "version":"0.1.0",
+   "input-size":{
+      "small":1,
+      "medium":5,
+      "large": 15
+   }  
+}
