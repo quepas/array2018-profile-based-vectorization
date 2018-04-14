@@ -60,3 +60,8 @@ typings/
 # Don't include temporary results
 /vectorization-intervals/results/*.csv
 /vectorization-intervals/results/*.png
+
+# wu temp stuff
+/benchmarks-instrumented/builds/
+/benchmarks-instrumented/runs/
+/benchmarks-instrumented/.wu/
