@@ -1,6 +1,6 @@
 function [answer,reference] = needle(penalty, max_rows, max_cols, input_seq_1, input_seq_2, reference, input_itemsets, blosum62)
 
-if strcmp(version('-release'), '2015b') && N >= 129
+if strcmp(version('-release'), '2015b') && max_rows >= 129
     for i = 2:max_cols
         reference(i, 2:max_rows) = blosum62(input_seq_2(2:max_rows), input_seq_1(i));
     end
@@ -12,7 +12,7 @@ else
     end
 end
 
-if strcmp(version('-release'), '2013a') && N >= 9 || strcmp(version('-release'), '2015b') && N >= 393
+if strcmp(version('-release'), '2013a') && max_rows >= 9 || strcmp(version('-release'), '2015b') && max_rows >= 393
     input_itemsets(2:max_rows, 1) = -(1:(max_rows-1)) .* penalty;
 else
     for i = 2:max_rows
@@ -20,7 +20,7 @@ else
     end
 end
 
-if strcmp(version('-release'), '2013a') && N >= 17 || strcmp(version('-release'), '2015b') && N >= 225
+if strcmp(version('-release'), '2013a') && max_cols >= 17 || strcmp(version('-release'), '2015b') && max_cols >= 225
     input_itemsets(1, 2:max_cols) = -(1:(max_cols-1)) * penalty;
 else
     for j = 2:max_cols
