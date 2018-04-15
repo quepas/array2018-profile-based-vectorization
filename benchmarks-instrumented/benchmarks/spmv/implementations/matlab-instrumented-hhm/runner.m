@@ -1,12 +1,10 @@
 function runner(dim,density,normal_stdev,iterations)
-% Example: runner(5000,2000,0.01,100);
+% Example: runner_loop(5000,2000,0.01,100);
 % random seed
 
 % feature accel off;
-%s = RandStream('mcg16807','Seed',10000);
-%RandStream.setDefaultStream(s);
-%RandStream.setGlobalStream(s);
-setRandomSeed();
+% feature accel on;
+rand('seed',1234579); %octave
 
 % rand_csr
 csr_num_rows     = dim;
@@ -18,6 +16,8 @@ csr_stddev       = normal_stdev * csr_nz_per_row;
 csr_Ap           = ones(1,csr_num_rows + 1);
 csr_Aj           = ones(1,csr_num_nonzeros);
 
+disp(sprintf('Approximate number of non-zero elements: %d\n', csr_num_nonzeros));
+
 high_bound       = min(csr_num_cols, 2 * csr_nz_per_row);
 used_cols        = zeros(1, csr_num_cols);
 used_cols        = blanks(csr_num_cols);
@@ -27,10 +27,15 @@ if update_interval == 0
 end
 
 for i = 1:csr_num_rows
-    %if mod(i, update_interval) == 0
-    %    disp(sprintf('\t%d of %d (%5.1f%%) Rows Generated. Continuing...\n',i,csr_num_rows,i/csr_num_rows*100));
-    %end
+    if mod(i, update_interval) == 0
+        disp(sprintf('\t%d of %d (%5.1f%%) Rows Generated. Continuing...\n',i,csr_num_rows,i/csr_num_rows*100));
+    end
     nnz_ith_row_double  = randn() * csr_stddev + csr_nz_per_row;
+
+    if mod(i, update_interval) == 0
+        disp(sprintf('\tRandomly chosen number of non-zero elements in row %d: %5.1f\n',i,nnz_ith_row_double));
+    end
+
     if nnz_ith_row_double < 0
         nnz_ith_row = 0;
     elseif nnz_ith_row_double > high_bound
@@ -38,9 +43,14 @@ for i = 1:csr_num_rows
     else
         nnz_ith_row = round(nnz_ith_row_double);
     end
+
+    if mod(i, update_interval) == 0
+        disp(sprintf('\tActual number of non-zero elements in row %d: %d\n',i,nnz_ith_row));
+    end
+
     csr_Ap(i+1) = csr_Ap(i) + nnz_ith_row;
     if csr_Ap(i+1) > csr_num_nonzeros + 1
-        csr_Ap = ones(1, csr_Ap(i+1));
+        csr_Aj = ones(1, csr_Ap(i+1));
     end
     used_cols(:) = 0;
     for j = 1:nnz_ith_row
@@ -56,6 +66,7 @@ for i = 1:csr_num_rows
     csr_Aj(sta:len) = sort(csr_Aj(sta:len));
 end
 nz_error = abs(csr_num_nonzeros - csr_Ap(csr_num_rows + 1)) / csr_num_nonzeros;
+disp(sprintf('Actual number of non-zero elements: %d\n',csr_Ap(csr_num_rows + 1)));
 if nz_error >= 0.05
     error('WARNING: Actual NNZ differs from Theoretical NNZ by %5.2f%%!\n',nz_error*100);
 end
@@ -72,13 +83,14 @@ end
 % the end of rand_csr
 
 vec = rand(1,dim);
+
 tic
 for i = 1:iterations
     res = spmv_core(dim,csr_num_rows,csr_Ap,csr_Ax,csr_Aj,vec);
 end
 elapsedTime = toc;
 
-disp(sprintf('The first value of the result is %f\n', res(1)));
+%disp(sprintf('The first value of the result is %f\n', res(1)));
 msg = sprintf('{ \"status\": %d, \"options\": \"-n %d -d %d -s %f\", \"time\": %f }\n', 1, dim, density, normal_stdev, elapsedTime);
 disp(msg);
 
