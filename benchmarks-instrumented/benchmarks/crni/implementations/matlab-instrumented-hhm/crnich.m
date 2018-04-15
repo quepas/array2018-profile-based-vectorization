@@ -101,16 +101,20 @@ Vb=zeros(1, n);
 Vb(1)=0;
 Vb(n)=0;
 
-for j1=2:m,
-    if strcmp(version('-release'), '2013a') && n >= 33 || strcmp(version('-release'), '2015b') && n >= 289
+if strcmp(version('-release'), '2013a') && n >= 33 || strcmp(version('-release'), '2015b') && n >= 289
+    for j1=2:m,
         Vb(2:(n-1))=U(1:(n-2), j1-1)+U(3:n, j1-1)+s2*U(2:(n-1), j1-1);
-    else
+        X=tridiagonal(Va, Vd, Vc, Vb, n);
+        U(1:n, j1)=X';
+    end;
+else
+    for j1=2:m,
         for i1=2:(n-1),
-        Vb(i1)=U(i1-1, j1-1)+U(i1+1, j1-1)+s2*U(i1, j1-1);
+            Vb(i1)=U(i1-1, j1-1)+U(i1+1, j1-1)+s2*U(i1, j1-1);
         end;
-    end
-    X=tridiagonal(Va, Vd, Vc, Vb, n);
-    U(1:n, j1)=X';
-end;
+        X=tridiagonal(Va, Vd, Vc, Vb, n);
+        U(1:n, j1)=X';
+    end;
+end
 
 end
