@@ -82,6 +82,7 @@ s1=2+2/r;
 s2=2/r-2;
 U=zeros(n, m);
 if strcmp(version('-release'), '2013a') && n >= 49 || strcmp(version('-release'), '2015b') && n >= 97
+    C_PI=3.14159265358979323846;
     i1 = colon(2,minus(n,1));
     mc_t182 = 1;
     U(i1, mc_t182) = plus(sin(times(times(C_PI, h),minus(i1,1))),sin(times(times(times(3,C_PI),h),minus(i1,1))));

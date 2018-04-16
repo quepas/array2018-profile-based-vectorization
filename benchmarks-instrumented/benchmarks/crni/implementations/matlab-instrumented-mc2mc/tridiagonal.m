@@ -57,7 +57,7 @@ end;
 X = zeros(1, n);
 X(n)=B(n)./D(n);
 
-if strcmp(version('-release'), '2013a') && n >= 4481 && n <= 5569 || strcmp(version('-release'), '2015b') && n >= 3713
+if (strcmp(version('-release'), '2013a') && n >= 4481 && n <= 5569) || strcmp(version('-release'), '2015b') && n >= 3713
     k = colon(minus(n,1),uminus(1),1);
     if length(X)==length(k)
         X=rdivide(minus(B(k),times(C(k),X(plus(k,1)))),D(k));

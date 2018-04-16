@@ -20,7 +20,6 @@ if strcmp(version('-release'), '2013a') && N >= 65
     end
     rtnR = transpose(rtnR);
     rtnI = transpose(rtnI);
-    end
 else
     for i=1:N
         [resR,resI] = fftSimple(xR(i,:),xI(i,:),N);
@@ -41,6 +40,5 @@ else
     end
     rtnR = transpose(rtnR);
     rtnI = transpose(rtnI);
-    end
 end
 end
