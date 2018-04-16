@@ -10,8 +10,8 @@ for j=2:nh
         for k = 2:no
             s = s + delta_o(k) * who(j,k);
         end
+        delta_h(j) = h * (1.0 - h) * s;
     end
-    delta_h(j) = h * (1.0 - h) * s;
     errsum = errsum + abs(delta_h(j));
 end
 end

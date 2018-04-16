@@ -8,13 +8,7 @@
             "file": "./fft2D.m"
         },
         {
-            "file": "./fft2DComplex.m"
-        },
-        {
             "file": "./fftSimple.m"
-        },
-        {
-            "file": "./fftSimpleComplex.m"
         }
     ],
     "runner-source-file": {

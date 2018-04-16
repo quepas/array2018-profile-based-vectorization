@@ -9,7 +9,7 @@ for j = 2:n2
         for k = 1:n1
             s = s + conn(k,j) * l1(k);
         end
+        l2(j) = 1.0 / (1.0 + exp(-s));
     end
-    l2(j) = 1.0 / (1.0 + exp(-s));
 end
 end

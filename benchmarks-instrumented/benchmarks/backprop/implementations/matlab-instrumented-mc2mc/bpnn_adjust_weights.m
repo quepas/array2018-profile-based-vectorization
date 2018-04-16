@@ -5,7 +5,7 @@ ly(1)    = 1.0;
 for j = 2:ndelta
     if strcmp(version('-release'), '2013a') && nly >= 17 || strcmp(version('-release'), '2015b') && nly >= 929
         k = colon(1,nly);
-        new_dw = plus(transpose(times(0.3,oldw(k, j))),times(times(0.3,delta(j)),ly(k)));
+        new_dw = plus(transpose(times(MOMENTUM,oldw(k, j))),times(times(ETA,delta(j)),ly(k)));
         oldw(k, j) = transpose(new_dw);
         w(k, j) = transpose(plus(transpose(w(k, j)),new_dw));
     else
