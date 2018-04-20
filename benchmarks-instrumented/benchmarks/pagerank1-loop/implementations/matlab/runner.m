@@ -6,7 +6,6 @@ function runner()
    % Default: {n: 1000}
 
    resultsDir = '../../paper-results/loops/';
-   %addpath('../../helpers/')
    % Num. of repated measurements
    rep = 100;
    % Function aggregating data from repeated measurements
