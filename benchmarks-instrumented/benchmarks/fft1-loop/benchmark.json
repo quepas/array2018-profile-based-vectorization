@@ -1,0 +1,11 @@
+{
+    "type": "benchmark",
+    "name": "fft1",
+    "short-name": "fft1-loop",
+    "version": "0.1.0",
+    "input-size": {
+        "small": {},
+        "medium": {},
+        "large": {}
+    }
+}
