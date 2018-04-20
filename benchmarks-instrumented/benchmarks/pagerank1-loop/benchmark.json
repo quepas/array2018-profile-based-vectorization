@@ -1,0 +1,11 @@
+{
+    "type": "benchmark",
+    "name": "pagerank1",
+    "short-name": "pagerank1-loop",
+    "version": "0.1.0",
+    "input-size": {
+        "small": {},
+        "medium": {},
+        "large": {}
+    }
+}
