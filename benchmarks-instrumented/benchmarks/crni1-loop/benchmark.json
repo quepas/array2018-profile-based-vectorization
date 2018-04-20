@@ -1,0 +1,11 @@
+{
+    "type": "benchmark",
+    "name": "crni1",
+    "short-name": "crni1-loop",
+    "version": "0.1.0",
+    "input-size": {
+        "small": {},
+        "medium": {},
+        "large": {}
+    }
+}
