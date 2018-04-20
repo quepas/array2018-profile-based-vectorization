@@ -1,0 +1,11 @@
+{
+    "type": "benchmark",
+    "name": "nw1",
+    "short-name": "nw1-loop",
+    "version": "0.1.0",
+    "input-size": {
+        "small": {},
+        "medium": {},
+        "large": {}
+    }
+}
