@@ -12,7 +12,7 @@ function runner()
    % Function aggregating data from repeated measurements
    aggregate = @min;
    % Values of input parameter (data sizes)
-   parameterValues = 1:64:2048; % 1:16:2048
+   parameterValues = 1:16:2048;
    numValues = length(parameterValues);
    aggregatedMeasurements = zeros(numValues, 3);
 
