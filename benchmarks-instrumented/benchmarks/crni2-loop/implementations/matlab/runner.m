@@ -27,8 +27,10 @@ function runner()
          s2 = rand(1, 1);
 
          tic();
-         for i1=2:(n-1)
-            Vb(i1)=U(i1-1, j1-1)+U(i1+1, j1-1)+s2*U(i1, j1-1);
+         for j1 = 1:n
+            for i1=2:(n-1)
+               Vb(i1)=U(i1-1, j1-1)+U(i1+1, j1-1)+s2*U(i1, j1-1);
+            end
          end
          measurements(1, r) = toc();
       end
@@ -39,15 +41,16 @@ function runner()
       for r = 1:rep
          Vb = zeros(1, n);
          U=rand(n, n);
-         j1 = randi([1, n], 1, 1)+1;
          s2 = rand(1, 1);
 
          tic();
-         i1 = colon(2,minus(n,1));
-         if length(Vb)==length(i1)
-            Vb=plus(plus(U(minus(i1,1),minus(j1,1)),U(plus(i1,1),minus(j1,1))),times(minus(rdivide(2,r),2),U(i1,minus(j1,1))));
-         else
-            Vb(i1)=plus(plus(U(minus(i1,1),minus(j1,1)),U(plus(i1,1),minus(j1,1))),times(minus(rdivide(2,r),2),U(i1,minus(j1,1))));
+         for j1 = 1:n
+            i1 = colon(2,minus(n,1));
+            if length(Vb)==length(i1)
+               Vb=plus(plus(U(minus(i1,1),minus(j1,1)),U(plus(i1,1),minus(j1,1))),times(minus(rdivide(2,s2),2),U(i1,minus(j1,1))));
+            else
+               Vb(i1)=plus(plus(U(minus(i1,1),minus(j1,1)),U(plus(i1,1),minus(j1,1))),times(minus(rdivide(2,s2),2),U(i1,minus(j1,1))));
+            end
          end
          measurements(1, r) = toc();
       end
@@ -58,11 +61,12 @@ function runner()
       for r = 1:rep
          Vb = zeros(1, n);
          U=rand(n, n);
-         j1 = randi([1, n], 1, 1)+1;
          s2 = rand(1, 1);
 
          tic();
-         Vb(2:(n-1))=U(1:(n-2), j1-1)+U(3:n, j1-1)+s2*U(2:(n-1), j1-1);
+         for j1 = 1:n
+            Vb(2:(n-1))=U(1:(n-2), j1-1)+U(3:n, j1-1)+s2*U(2:(n-1), j1-1);
+         end
          measurements(1, r) = toc();
       end
       aggregatedMeasurements(value, 3) = aggregate(measurements(1, :));

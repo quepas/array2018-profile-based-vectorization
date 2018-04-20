@@ -21,15 +21,16 @@ function runner()
       %% Original code
       measurements = zeros(1, rep);
       for r = 1:rep
-         ii = randi([1, n], 1, 1);
          input_seq_1 = randi([1, 24], 1, n);
          input_seq_2 = randi([1, 24], 1, n);
          blosum62 = rand(24, 24);
          reference = rand(n, n);
 
          tic();
-         for jj = 2:n
-            reference(ii,jj) = blosum62(input_seq_2(jj), input_seq_1(ii));
+         for ii = 1:n
+            for jj = 2:n
+               reference(ii,jj) = blosum62(input_seq_2(jj), input_seq_1(ii));
+            end
          end
          measurements(1, r) = toc();
       end
@@ -38,15 +39,16 @@ function runner()
       %% LCPC code
       measurements = zeros(1, rep);
       for r = 1:rep
-         ii = randi([1, n], 1, 1);
          input_seq_1 = randi([1, 24], 1, n);
          input_seq_2 = randi([1, 24], 1, n);
          blosum62 = rand(24, 24);
          reference = rand(n, n);
 
          tic();
-         jj = colon(2, n);
-         reference(ii, jj) = blosum62(input_seq_2(jj),input_seq_1(ii));
+         for ii = 1:n
+            jj = colon(2, n);
+            reference(ii, jj) = blosum62(input_seq_2(jj),input_seq_1(ii));
+         end
          measurements(1, r) = toc();
       end
       aggregatedMeasurements(value, 2) = aggregate(measurements(1, :));
@@ -54,14 +56,15 @@ function runner()
       %% HHM code
       measurements = zeros(1, rep);
       for r = 1:rep
-         ii = randi([1, n], 1, 1);
          input_seq_1 = randi([1, 24], 1, n);
          input_seq_2 = randi([1, 24], 1, n);
          blosum62 = rand(24, 24);
          reference = rand(n, n);
 
          tic();
-         reference(ii, 2:n) = blosum62(input_seq_2(2:n), input_seq_1(ii));
+         for ii = 1:n
+            reference(ii, 2:n) = blosum62(input_seq_2(2:n), input_seq_1(ii));
+         end
          measurements(1, r) = toc();
       end
       aggregatedMeasurements(value, 3) = aggregate(measurements(1, :));

@@ -25,11 +25,12 @@ function runner()
          s = 0;
          conn = rand(n, n2);
          l1 = rand(1, n);
-         jj = randi([1, n2], 1, 1);
 
          tic();
-         for k = 1:n
-            s = s + conn(k, jj) * l1(k);
+         for jj = 1:n2
+            for k = 1:n
+               s = s + conn(k, jj) * l1(k);
+            end
          end
          measurements(1, r) = toc();
 
@@ -43,11 +44,12 @@ function runner()
          s = 0;
          conn = rand(n, n2);
          l1 = rand(1, n);
-         jj = randi([1, n2], 1, 1);
 
          tic();
-         k = colon(1,n);
-         s = plus(s, sum(times(transpose(conn(k, jj)), l1(k))));
+         for jj = 1:n2
+            k = colon(1,n);
+            s = plus(s, sum(times(transpose(conn(k, jj)), l1(k))));
+         end
          measurements(1, r) = toc();
 
          assert(isscalar(s));
@@ -59,10 +61,12 @@ function runner()
       for r = 1:rep
          conn = rand(n, n2);
          l1 = rand(1, n);
-         jj = randi([1, n2], 1, 1);
+         s = 0;
 
          tic();
-         s = sum(conn(1:n, jj) .* l1(1:n)');
+         for jj = 1:n2
+            s = s + sum(conn(1:n, jj) .* l1(1:n)');
+         end
          measurements(1, r) = toc();
 
          assert(isscalar(s));

@@ -24,13 +24,14 @@ function runner()
       measurements = zeros(1, rep);
       for r = 1:rep
          s = 0;
-         jj = randi([1, nh], 1, 1);
          delta_o = rand(1, n);
          wh = rand(nh, n);
 
          tic();
-         for k = 2:n
-            s = s + delta_o(k) * wh(jj,k);
+         for jj = 1:nh
+            for k = 2:n
+               s = s + delta_o(k) * wh(jj,k);
+            end
          end
          measurements(1, r) = toc();
       end
@@ -40,13 +41,14 @@ function runner()
       measurements = zeros(1, rep);
       for r = 1:rep
          s = 0;
-         jj = randi([1, nh], 1, 1);
          delta_o = rand(1, n);
          wh = rand(nh, n);
 
          tic();
-         k = colon(2,n);
-         s = plus(s, sum(times(delta_o(k),wh(jj, k))));
+         for jj = 1:nh
+            k = colon(2,n);
+            s = plus(s, sum(times(delta_o(k),wh(jj, k))));
+         end
          measurements(1, r) = toc();
       end
       aggregatedMeasurements(value, 2) = aggregate(measurements(1, :));
@@ -54,12 +56,14 @@ function runner()
       %% HHM code
       measurements = zeros(1, rep);
       for r = 1:rep
-         jj = randi([1, nh], 1, 1);
          delta_o = rand(1, n);
          wh = rand(nh, n);
+         s = 0;
 
          tic();
-         s = sum(delta_o(2:n) .* wh(jj, 2:n));
+         for jj = 1:nh
+            s = s + sum(delta_o(2:n) .* wh(jj, 2:n));
+         end
          measurements(1, r) = toc();
       end
       aggregatedMeasurements(value, 3) = aggregate(measurements(1, :));

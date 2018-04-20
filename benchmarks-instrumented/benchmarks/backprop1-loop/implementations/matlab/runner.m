@@ -28,15 +28,16 @@ function runner()
          ly = rand(1, nly);
          oldw = rand(n, ndelta);
          w = rand(n, ndelta);
-         jj = randi([1, ndelta], 1, 1);
          ETA = rand(1, 1);
          MOMENTUM = rand(1, 1);
 
          tic();
-         for k = 1:nly
-            new_dw = ((ETA * delta(jj) * ly(k)) + (MOMENTUM * oldw(k,jj)));
-            w(k,jj) = w(k,jj) + new_dw;
-            oldw(k,jj) = new_dw;
+         for jj = 1:ndelta
+            for k = 1:nly
+               new_dw = ((ETA * delta(jj) * ly(k)) + (MOMENTUM * oldw(k,jj)));
+               w(k,jj) = w(k,jj) + new_dw;
+               oldw(k,jj) = new_dw;
+            end
          end
          measurements(1, r) = toc();
       end
@@ -50,15 +51,16 @@ function runner()
          ly = rand(1, nly);
          oldw = rand(n, ndelta);
          w = rand(n, ndelta);
-         jj = randi([1, ndelta], 1, 1);
          ETA = rand(1, 1);
          MOMENTUM = rand(1, 1);
 
          tic();
-         k = colon(1,nly);
-         new_dw = plus(transpose(times(MOMENTUM,oldw(k, jj))),times(times(ETA,delta(jj)),ly(k)));
-         oldw(k, jj) = transpose(new_dw);
-         w(k, jj) = transpose(plus(transpose(w(k, jj)),new_dw));
+         for jj = 1:ndelta
+            k = colon(1,nly);
+            new_dw = plus(transpose(times(MOMENTUM,oldw(k, jj))),times(times(ETA,delta(jj)),ly(k)));
+            oldw(k, jj) = transpose(new_dw);
+            w(k, jj) = transpose(plus(transpose(w(k, jj)),new_dw));
+         end
          measurements(1, r) = toc();
       end
       aggregatedMeasurements(value, 2) = aggregate(measurements(1, :));
@@ -71,14 +73,15 @@ function runner()
          ly = rand(1, nly);
          oldw = rand(n, ndelta);
          w = rand(n, ndelta);
-         jj = randi([1, ndelta], 1, 1);
          ETA = rand(1, 1);
          MOMENTUM = rand(1, 1);
 
          tic();
-         new_dw = ((ETA .* delta(jj) .* ly)' + (MOMENTUM .* oldw(1:nly,jj)));
-         w(1:nly,jj) = w(1:nly,jj) + new_dw;
-         oldw(1:nly,jj) = new_dw;
+         for jj = 1:ndelta
+            new_dw = ((ETA .* delta(jj) .* ly)' + (MOMENTUM .* oldw(1:nly,jj)));
+            w(1:nly,jj) = w(1:nly,jj) + new_dw;
+            oldw(1:nly,jj) = new_dw;
+         end
          measurements(1, r) = toc();
       end
       aggregatedMeasurements(value, 3) = aggregate(measurements(1, :));

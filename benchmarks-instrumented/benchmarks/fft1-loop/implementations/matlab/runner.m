@@ -25,12 +25,13 @@ function runner()
          rtnI = zeros(n, n);
          resR = rand(1, n);
          resI = rand(1, n);
-         ii = randi([1, n], 1, 1);
 
          tic();
-         for k=1:n
-            rtnR(ii,k) = resR(k);
-            rtnI(ii,k) = resI(k);
+         for ii = 1:n
+            for k=1:n
+               rtnR(ii,k) = resR(k);
+               rtnI(ii,k) = resI(k);
+            end
          end
          measurements(1, r) = toc();
       end
@@ -43,12 +44,13 @@ function runner()
          rtnI = zeros(n, n);
          resR = rand(1, n);
          resI = rand(1, n);
-         ii = randi([1, n], 1, 1);
 
          tic();
-         k = colon(1,n);
-         rtnI(ii, k) = resI(k);
-         rtnR(ii, k) = resR(k);
+         for ii = 1:n
+            k = colon(1,n);
+            rtnI(ii, k) = resI(k);
+            rtnR(ii, k) = resR(k);
+         end
          measurements(1, r) = toc();
       end
       aggregatedMeasurements(value, 2) = aggregate(measurements(1, :));
@@ -60,11 +62,12 @@ function runner()
          rtnI = zeros(n, n);
          resR = rand(1, n);
          resI = rand(1, n);
-         ii = randi([1, n], 1, 1);
 
          tic();
-         rtnR(ii, :) = resR(1:n);
-         rtnI(ii, :) = resI(1:n);
+         for ii = 1:n
+            rtnR(ii, :) = resR(1:n);
+            rtnI(ii, :) = resI(1:n);
+         end
          measurements(1, r) = toc();
       end
       aggregatedMeasurements(value, 3) = aggregate(measurements(1, :));
