@@ -7,7 +7,7 @@ loopID = 'pagerank1';
 resultsDir = '../../results/';
 addpath('../../helpers/')
 % Num. of repated measurements
-rep = 100;
+rep = 10;
 % Function aggregating data from repeated measurements
 aggregate = @min;
 % Values of input parameter (data sizes)
@@ -27,8 +27,10 @@ for value = 1:numValues
       ii = randi([1, n], 1, 1);
 
       tic();
-      for k = 1:n
-         maps(ii,k) = pages(ii,k) * outbounRank;
+      for ii=1:n
+         for k = 1:n
+            maps(ii,k) = pages(ii,k) * outbounRank;
+         end
       end
       measurements(1, r) = toc();
    end
@@ -43,8 +45,10 @@ for value = 1:numValues
       ii = randi([1, n], 1, 1);
 
       tic();
-      k = colon(1,n);
-      maps(ii, k) = times(pages(ii, k), outbounRank);
+      for ii = 1:n
+         k = colon(1,n);
+         maps(ii, k) = times(pages(ii, k), outbounRank);
+      end
       measurements(1, r) = toc();
    end
    aggregatedMeasurements(value, 2) = aggregate(measurements(1, :));
@@ -58,7 +62,9 @@ for value = 1:numValues
       ii = randi([1, n], 1, 1);
 
       tic();
-      maps(ii,:) = pages(ii,1:n) .* outbounRank;
+      for ii = 1:n
+         maps(ii,:) = pages(ii,1:n) .* outbounRank;
+      end
       measurements(1, r) = toc();
    end
    aggregatedMeasurements(value, 3) = aggregate(measurements(1, :));
