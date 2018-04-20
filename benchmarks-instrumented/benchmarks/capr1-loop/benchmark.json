@@ -1,0 +1,11 @@
+{
+    "type": "benchmark",
+    "name": "capr1",
+    "short-name": "capr1-loop",
+    "version": "0.1.0",
+    "input-size": {
+        "small": {},
+        "medium": {},
+        "large": {}
+    }
+}
