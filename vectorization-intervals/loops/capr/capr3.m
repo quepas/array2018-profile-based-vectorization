@@ -11,7 +11,7 @@ rep = 100;
 % Function aggregating data from repeated measurements
 aggregate = @min;
 % Values of input parameter (data sizes)
-parameterValues = 1:16:4096;
+parameterValues = 1:32:4096;
 numValues = length(parameterValues);
 aggregatedMeasurements = zeros(numValues, 3);
 
