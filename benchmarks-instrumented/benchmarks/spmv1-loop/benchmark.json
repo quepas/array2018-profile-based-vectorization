@@ -1,0 +1,11 @@
+{
+    "type": "benchmark",
+    "name": "spmv1",
+    "short-name": "spmv1-loop",
+    "version": "0.1.0",
+    "input-size": {
+        "small": {},
+        "medium": {},
+        "large": {}
+    }
+}
