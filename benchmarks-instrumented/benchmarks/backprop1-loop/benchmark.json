@@ -1,0 +1,11 @@
+{
+    "type": "benchmark",
+    "name": "backprop1",
+    "short-name": "backprop1-loop",
+    "version": "0.1.0",
+    "input-size": {
+        "small": {},
+        "medium": {},
+        "large": {}
+    }
+}
