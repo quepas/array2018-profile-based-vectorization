@@ -1,12 +1,16 @@
 {
     "type": "implementation",
-    "short-name":"matlab-mixed",
-    "description":"Matlab port of C implementation",
-    "language":"matlab",
-    "core-source-files":[
-       { "file": "./pagerank.m"}
+    "short-name": "matlab-mc2mc",
+    "description": "Matlab port of C implementation",
+    "language": "matlab",
+    "core-source-files": [
+        {
+            "file": "./pagerank.m"
+        }
     ],
-    "runner-source-file": { "file": "./runner.m" },
+    "runner-source-file": {
+        "file": "./runner.m"
+    },
     "runner-arguments": [
         {
             "expand": "/experiment/input-size",
@@ -25,6 +29,5 @@
             "path": "/divisor"
         }
     ],
-    "libraries":[
-    ]
+    "libraries": []
 }
