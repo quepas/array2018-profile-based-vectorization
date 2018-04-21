@@ -4,6 +4,7 @@ l1(1) = 1.0;
 if n1 >= 385
     for j = 2:n2
         s = sum(conn(1:n1, j) .* l1(1:n1)');
+        l2(j) = 1.0 / (1.0 + exp(-s));
     end
 else
     for j = 2:n2
@@ -11,7 +12,7 @@ else
         for k = 1:n1
             s = s + conn(k,j) * l1(k);
         end
+        l2(j) = 1.0 / (1.0 + exp(-s));
     end
 end
-l2(j) = 1.0 / (1.0 + exp(-s));
 end
