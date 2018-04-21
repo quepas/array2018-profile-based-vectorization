@@ -65,3 +65,7 @@ typings/
 /benchmarks-instrumented/builds/
 /benchmarks-instrumented/runs/
 /benchmarks-instrumented/.wu/
+
+# R temp
+.RData
+.Rhistory
