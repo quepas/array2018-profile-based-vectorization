@@ -1,0 +1,14 @@
+{
+    "type": "experiment",
+    "short-name": "profiling-loops",
+    "iteration-number": 1,
+    "input-size": "medium",
+    "configuration": {
+        "implementations": [
+            "matlab"
+        ],
+        "environments": [
+            "matlab-vm-2015b-jit"
+        ]
+    }
+}

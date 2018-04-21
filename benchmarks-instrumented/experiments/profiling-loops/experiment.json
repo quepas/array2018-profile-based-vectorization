@@ -1,0 +1,33 @@
+{
+    "type": "experiment",
+    "short-name": "profiling-loops",
+    "iteration-number": 1,
+    "input-size": "medium",
+    "configuration": {
+        "implementations": [
+            "matlab"
+        ],
+        "environments": [
+            "matlab-vm-2015b-jit"
+        ],
+        "benchmarks": [
+            "backprop1-loop",
+            "backprop2-loop",
+            "backprop3-loop",
+            "backprop4-loop",
+            "capr1-loop",
+            "capr2-loop",
+            "capr3-loop",
+            "crni1-loop",
+            "crni2-loop",
+            "crni3-loop",
+            "fft1-loop",
+            "fft2-loop",
+            "nw1-loop",
+            "nw2-loop",
+            "nw3-loop",
+            "pagerank1-loop",
+            "spmv1-loop"
+        ]
+    }
+}
