@@ -1,0 +1,20 @@
+### Invariants (configuration parameters that are the same for all runs) ###
+
+| category    | short-name          |
+| ----------- | ------------------- |
+| compiler    | none-matlab         |
+| platform    | cri                 |
+| environment | matlab-vm-2015b-jit |
+| input-size  | medium              |
+
+### Results ###
+
+| benchmark | implementation         | mean    | std     | min     | max     | repetitions |
+| --------- | ---------------------- | ------- | ------- | ------- | ------- | ----------- |
+| crni      | matlab                 | 3.0711s | +-0.84% | 3.0532s | 3.3123s | 100         |
+| crni      | matlab-mc2mc           | 3.7599s | +-0.28% | 3.7412s | 3.7996s | 100         |
+| crni      | matlab-mc2mc-selective | 3.0968s | +-0.77% | 3.0682s | 3.2983s | 100         |
+| nw        | matlab                 | 1.5887s | +-0.26% | 1.5829s | 1.6194s | 100         |
+| nw        | matlab-mc2mc           | 1.7132s | +-0.18% | 1.7085s | 1.7277s | 100         |
+| nw        | matlab-mc2mc-selective | 1.5869s | +-0.22% | 1.5690s | 1.6025s | 100         |
+

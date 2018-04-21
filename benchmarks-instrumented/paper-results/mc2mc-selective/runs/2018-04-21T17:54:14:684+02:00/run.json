@@ -1,0 +1,525 @@
+{
+  "results": {
+    "0cc054942894a66bd97a124549936377bb4fc7d8": {
+      "type": "run",
+      "benchmark": {
+        "short-name": "crni",
+        "type": "benchmark",
+        "name": "Crank-Nicholson",
+        "description": "Compute the Crank-Nicholson solution to the one-dimensional heat equation",
+        "version": "0.1.0",
+        "input-size": {
+          "small": 5,
+          "medium": 7,
+          "large": 9
+        },
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni"
+      },
+      "implementation": {
+        "short-name": "matlab",
+        "type": "implementation",
+        "description": "Matlab implementation for babai",
+        "language": "matlab",
+        "core-source-files": [
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab/crnich.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab/tridiagonal.m"
+        ],
+        "runner-source-file": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab/runner.m",
+        "runner-arguments": [
+          7
+        ],
+        "runner-argument-types": [
+          "'DOUBLE&1*1&REAL'"
+        ],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab"
+      },
+      "compiler": {
+        "short-name": "none-matlab",
+        "type": "compiler",
+        "name": "None",
+        "supported-languages": [
+          "matlab"
+        ],
+        "target-languages": [
+          "matlab"
+        ],
+        "runner-name": "runner.m",
+        "commands": [
+          {
+            "executable-path": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/compilers/none-matlab/cat-with-nl",
+            "options": [
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab/runner.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab/crnich.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab/tridiagonal.m",
+              ">",
+              "runner.m"
+            ]
+          }
+        ],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/compilers/none-matlab"
+      },
+      "experiment": {
+        "type": "experiment",
+        "short-name": "default",
+        "input-size": "medium",
+        "iteration-number": 100
+      },
+      "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/builds/727ca609f33f3197b17b4582a8fde257bc9a0cec",
+      "environment": {
+        "short-name": "matlab-vm-2015b-jit",
+        "type": "environment",
+        "name": "MATLAB Virtual Machine",
+        "version": "R2015b (8.6.0.267246) 64-bit (glnxa64)",
+        "supported-languages": [
+          "matlab"
+        ],
+        "supported-formats": [
+          "text"
+        ],
+        "implementation-language": "x86_64",
+        "implementation-format": "binary",
+        "executable-path": "/usr/local/MATLAB/R2015b/bin/matlab",
+        "executable-options": [
+          "-nodesktop",
+          "-nodisplay",
+          "-r"
+        ],
+        "run-script-options": {
+          "matlab-jit": true
+        },
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/environments/matlab-vm-2015b-jit"
+      },
+      "platform": {
+        "short-name": "cri",
+        "type": "platform",
+        "name": "Linux-4.4.0-119-generic-x86_64-with-Ubuntu-16.04-xenial",
+        "cpu": "Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz",
+        "gpu": [
+          "Intel Corporation Sky Lake Integrated Graphics"
+        ],
+        "memory": "15.5545 GB",
+        "os": "Ubuntu 16.04 xenial",
+        "supported-languages": [
+          "x86_64"
+        ],
+        "supported-formats": [
+          "binary"
+        ],
+        "environments": [],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/platforms/cri"
+      },
+      "short-name": "b1d5df37b33dbf03c9f189d2687902d1f657d371",
+      "times": [
+        3.0797,
+        3.0642,
+        3.0732,
+        3.0586,
+        3.0645,
+        3.0706,
+        3.0743,
+        3.0665,
+        3.0638,
+        3.0618,
+        3.0724,
+        3.067,
+        3.0647,
+        3.0628,
+        3.0685,
+        3.0635,
+        3.0673,
+        3.0995,
+        3.0787,
+        3.0661,
+        3.0611,
+        3.0793,
+        3.0745,
+        3.0664,
+        3.0653,
+        3.0639,
+        3.0594,
+        3.0592,
+        3.0653,
+        3.069,
+        3.064,
+        3.0566,
+        3.0762,
+        3.0728,
+        3.065,
+        3.064,
+        3.061,
+        3.0722,
+        3.0654,
+        3.064,
+        3.071,
+        3.0746,
+        3.0695,
+        3.0772,
+        3.0671,
+        3.0754,
+        3.0646,
+        3.0631,
+        3.0671,
+        3.0731,
+        3.0572,
+        3.0728,
+        3.074,
+        3.0736,
+        3.0647,
+        3.0707,
+        3.0743,
+        3.0532,
+        3.0697,
+        3.0753,
+        3.0678,
+        3.0677,
+        3.074,
+        3.0652,
+        3.0681,
+        3.0643,
+        3.0679,
+        3.062,
+        3.0711,
+        3.0667,
+        3.0701,
+        3.0642,
+        3.0649,
+        3.0622,
+        3.0708,
+        3.0894,
+        3.0726,
+        3.0756,
+        3.0688,
+        3.0739,
+        3.0735,
+        3.3123,
+        3.0656,
+        3.0645,
+        3.0621,
+        3.0633,
+        3.0687,
+        3.0658,
+        3.0653,
+        3.0655,
+        3.0622,
+        3.065,
+        3.0626,
+        3.0623,
+        3.072,
+        3.0639,
+        3.0616,
+        3.0757,
+        3.0681,
+        3.1207
+      ],
+      "outputs": [
+        {
+          "time": 3.0797
+        },
+        {
+          "time": 3.0642
+        },
+        {
+          "time": 3.0732
+        },
+        {
+          "time": 3.0586
+        },
+        {
+          "time": 3.0645
+        },
+        {
+          "time": 3.0706
+        },
+        {
+          "time": 3.0743
+        },
+        {
+          "time": 3.0665
+        },
+        {
+          "time": 3.0638
+        },
+        {
+          "time": 3.0618
+        },
+        {
+          "time": 3.0724
+        },
+        {
+          "time": 3.067
+        },
+        {
+          "time": 3.0647
+        },
+        {
+          "time": 3.0628
+        },
+        {
+          "time": 3.0685
+        },
+        {
+          "time": 3.0635
+        },
+        {
+          "time": 3.0673
+        },
+        {
+          "time": 3.0995
+        },
+        {
+          "time": 3.0787
+        },
+        {
+          "time": 3.0661
+        },
+        {
+          "time": 3.0611
+        },
+        {
+          "time": 3.0793
+        },
+        {
+          "time": 3.0745
+        },
+        {
+          "time": 3.0664
+        },
+        {
+          "time": 3.0653
+        },
+        {
+          "time": 3.0639
+        },
+        {
+          "time": 3.0594
+        },
+        {
+          "time": 3.0592
+        },
+        {
+          "time": 3.0653
+        },
+        {
+          "time": 3.069
+        },
+        {
+          "time": 3.064
+        },
+        {
+          "time": 3.0566
+        },
+        {
+          "time": 3.0762
+        },
+        {
+          "time": 3.0728
+        },
+        {
+          "time": 3.065
+        },
+        {
+          "time": 3.064
+        },
+        {
+          "time": 3.061
+        },
+        {
+          "time": 3.0722
+        },
+        {
+          "time": 3.0654
+        },
+        {
+          "time": 3.064
+        },
+        {
+          "time": 3.071
+        },
+        {
+          "time": 3.0746
+        },
+        {
+          "time": 3.0695
+        },
+        {
+          "time": 3.0772
+        },
+        {
+          "time": 3.0671
+        },
+        {
+          "time": 3.0754
+        },
+        {
+          "time": 3.0646
+        },
+        {
+          "time": 3.0631
+        },
+        {
+          "time": 3.0671
+        },
+        {
+          "time": 3.0731
+        },
+        {
+          "time": 3.0572
+        },
+        {
+          "time": 3.0728
+        },
+        {
+          "time": 3.074
+        },
+        {
+          "time": 3.0736
+        },
+        {
+          "time": 3.0647
+        },
+        {
+          "time": 3.0707
+        },
+        {
+          "time": 3.0743
+        },
+        {
+          "time": 3.0532
+        },
+        {
+          "time": 3.0697
+        },
+        {
+          "time": 3.0753
+        },
+        {
+          "time": 3.0678
+        },
+        {
+          "time": 3.0677
+        },
+        {
+          "time": 3.074
+        },
+        {
+          "time": 3.0652
+        },
+        {
+          "time": 3.0681
+        },
+        {
+          "time": 3.0643
+        },
+        {
+          "time": 3.0679
+        },
+        {
+          "time": 3.062
+        },
+        {
+          "time": 3.0711
+        },
+        {
+          "time": 3.0667
+        },
+        {
+          "time": 3.0701
+        },
+        {
+          "time": 3.0642
+        },
+        {
+          "time": 3.0649
+        },
+        {
+          "time": 3.0622
+        },
+        {
+          "time": 3.0708
+        },
+        {
+          "time": 3.0894
+        },
+        {
+          "time": 3.0726
+        },
+        {
+          "time": 3.0756
+        },
+        {
+          "time": 3.0688
+        },
+        {
+          "time": 3.0739
+        },
+        {
+          "time": 3.0735
+        },
+        {
+          "time": 3.3123
+        },
+        {
+          "time": 3.0656
+        },
+        {
+          "time": 3.0645
+        },
+        {
+          "time": 3.0621
+        },
+        {
+          "time": 3.0633
+        },
+        {
+          "time": 3.0687
+        },
+        {
+          "time": 3.0658
+        },
+        {
+          "time": 3.0653
+        },
+        {
+          "time": 3.0655
+        },
+        {
+          "time": 3.0622
+        },
+        {
+          "time": 3.065
+        },
+        {
+          "time": 3.0626
+        },
+        {
+          "time": 3.0623
+        },
+        {
+          "time": 3.072
+        },
+        {
+          "time": 3.0639
+        },
+        {
+          "time": 3.0616
+        },
+        {
+          "time": 3.0757
+        },
+        {
+          "time": 3.0681
+        },
+        {
+          "time": 3.1207
+        }
+      ]
+    }
+  },
+  "experiment": {
+    "type": "experiment",
+    "short-name": "default",
+    "input-size": "medium",
+    "iteration-number": 100
+  },
+  "time": "2018-04-21T17:54:14:684+02:00"
+}
