@@ -1,0 +1,23 @@
+{
+    "type": "experiment",
+    "short-name": "mc2mc-selective-optimized",
+    "iteration-number": 5,
+    "input-size": "medium",
+    "configuration": {
+        "implementations": [
+            "matlab",
+            "matlab-mc2mc",
+            "matlab-mc2mc-selective-optimized"
+        ],
+        "environments": [
+            "matlab-vm-2015b-jit"
+        ],
+        "benchmarks": [
+            "backprop",
+            "crni",
+            "fft",
+            "nw",
+            "pagerank"
+        ]
+    }
+}
