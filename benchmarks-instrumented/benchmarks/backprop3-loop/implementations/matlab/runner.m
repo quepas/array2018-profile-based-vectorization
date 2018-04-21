@@ -1,17 +1,23 @@
 function runner()
-   %% LoopID: backprop3
-   loopID = 'backprop3';
    % Benchmark: backprop
    % Function: bpnn_layerforward.m
    % Defaults: {n: [2850001, 17], n2: [17, 2]}
 
-   resultsDir = '../../paper-results/loops/';
-   % Num. of repated measurements
-   rep = 100;
-   % Function aggregating data from repeated measurements
-   aggregate = @min;
+   %%%% SMALL TEST
+   loopID = 'backprop3';
    % Values of input parameter (data sizes)
    parameterValues = 1:32:4096;
+   % Num. of repated measurements
+   rep = 100;
+   %%%% BIG TEST
+   % loopID = 'backprop3big';
+   % parameterValues = 25000:25000:3200000;
+   % rep = 10;
+
+   resultsDir = '../../paper-results/loops/';
+   % Function aggregating data from repeated measurements
+   aggregate = @min;
+
    numValues = length(parameterValues);
    aggregatedMeasurements = zeros(numValues, 3);
 

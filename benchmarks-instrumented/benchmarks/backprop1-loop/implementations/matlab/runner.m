@@ -1,18 +1,24 @@
 function runner()
-   %% LoopID: backprop1
-   loopID = 'backprop1';
    % Benchmark: backprop
    % Function: bpnn_adjust_weights.m
    % Default: {n: [17, 2850001], ndelta: [2, 17]}
    % Found: {n: 497}
 
-   resultsDir = '../../paper-results/loops/';
+   %%%% SMALL TEST
+   loopID = 'backprop1';
+   % Values of input parameter (data sizes)
+   parameterValues = 1:16:2048;
    % Num. of repated measurements
    rep = 100;
+   %%%% BIG TEST
+   % loopID = 'backprop1big';
+   % parameterValues = 25000:25000:3200000;
+   % rep = 10;
+
+   resultsDir = '../../paper-results/loops/';
    % Function aggregating data from repeated measurements
    aggregate = @min;
-   % Values of input parameter (data sizes)
-   parameterValues = 1:16:2048; %2850000:1000:2855000;%
+
    numValues = length(parameterValues);
    aggregatedMeasurements = zeros(numValues, 3);
 
