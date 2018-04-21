@@ -1,0 +1,20 @@
+{
+    "type": "experiment",
+    "short-name": "mc2mc-selective",
+    "iteration-number": 100,
+    "input-size": "medium",
+    "configuration": {
+        "implementations": [
+            "matlab",
+            "matlab-mc2mc",
+            "matlab-mc2mc-selective"
+        ],
+        "environments": [
+            "matlab-vm-2015b-jit"
+        ],
+        "benchmarks": [
+            "crni",
+            "nw"
+        ]
+    }
+}
