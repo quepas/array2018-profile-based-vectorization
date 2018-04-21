@@ -7,16 +7,16 @@ function runner()
 
    resultsDir = '../../paper-results/loops/';
    % Num. of repated measurements
-   rep = 100;
+   rep = 10;
    % Function aggregating data from repeated measurements
    aggregate = @min;
    % Values of input parameter (data sizes)
-   parameterValues = 1:64:8192;
+   parameterValues = 1:64:6144;
    numValues = length(parameterValues);
    aggregatedMeasurements = zeros(numValues, 3);
 
    for value = 1:numValues
-      n = parameterValues(value);
+      n = parameterValues(value)
 
       %% Original code
       measurements = zeros(1, rep);

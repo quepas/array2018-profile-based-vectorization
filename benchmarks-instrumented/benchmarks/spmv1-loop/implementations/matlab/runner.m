@@ -17,7 +17,7 @@ function runner()
    aggregatedMeasurements = zeros(numValues, 3);
 
    for value = 1:numValues
-      n = parameterValues(value);
+      n = parameterValues(value)
 
       %% Original code
       measurements = zeros(1, rep);

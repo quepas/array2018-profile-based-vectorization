@@ -7,7 +7,7 @@ function runner()
 
    resultsDir = '../../paper-results/loops/';
    % Num. of repated measurements
-   rep = 100;
+   rep = 10;
    % Function aggregating data from repeated measurements
    aggregate = @min;
    % Values of input parameter (data sizes)
@@ -27,7 +27,7 @@ function runner()
          s2 = rand(1, 1);
 
          tic();
-         for j1 = 1:n
+         for j1 = 2:(n+1)
             for i1=2:(n-1)
                Vb(i1)=U(i1-1, j1-1)+U(i1+1, j1-1)+s2*U(i1, j1-1);
             end
@@ -44,7 +44,7 @@ function runner()
          s2 = rand(1, 1);
 
          tic();
-         for j1 = 1:n
+         for j1 = 2:(n+1)
             i1 = colon(2,minus(n,1));
             if length(Vb)==length(i1)
                Vb=plus(plus(U(minus(i1,1),minus(j1,1)),U(plus(i1,1),minus(j1,1))),times(minus(rdivide(2,s2),2),U(i1,minus(j1,1))));
@@ -64,7 +64,7 @@ function runner()
          s2 = rand(1, 1);
 
          tic();
-         for j1 = 1:n
+         for j1 = 2:(n+1)
             Vb(2:(n-1))=U(1:(n-2), j1-1)+U(3:n, j1-1)+s2*U(2:(n-1), j1-1);
          end
          measurements(1, r) = toc();
