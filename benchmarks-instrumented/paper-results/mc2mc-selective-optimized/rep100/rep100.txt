@@ -1,0 +1,29 @@
+### Invariants (configuration parameters that are the same for all runs) ###
+
+| category    | short-name          |
+| ----------- | ------------------- |
+| compiler    | none-matlab         |
+| platform    | cri                 |
+| environment | matlab-vm-2015b-jit |
+| input-size  | medium              |
+
+### Results ###
+
+| benchmark | implementation                   | mean    | std     | min     | max     | repetitions |
+| --------- | -------------------------------- | ------- | ------- | ------- | ------- | ----------- |
+| backprop  | matlab                           | 2.5042s | +-0.62% | 2.4993s | 2.6451s | 100         |
+| backprop  | matlab-mc2mc                     | 3.1045s | +-1.98% | 3.0847s | 3.7112s | 100         |
+| backprop  | matlab-mc2mc-selective-optimized | 1.3573s | +-0.18% | 1.3519s | 1.3640s | 100         |
+| crni      | matlab                           | 3.0689s | +-0.35% | 3.0563s | 3.1297s | 100         |
+| crni      | matlab-mc2mc                     | 3.7666s | +-1.29% | 3.7399s | 4.2366s | 100         |
+| fft       | matlab                           | 0.9288s | +-2.95% | 0.9002s | 1.0175s | 100         |
+| crni      | matlab-mc2mc-selective-optimized | 2.2811s | +-0.62% | 2.2593s | 2.3416s | 100         |
+| fft       | matlab-mc2mc-selective-optimized | 0.9281s | +-2.46% | 0.8971s | 1.0222s | 100         |
+| fft       | matlab-mc2mc                     | 1.4622s | +-2.18% | 1.4210s | 1.5827s | 100         |
+| nw        | matlab                           | 1.5899s | +-0.25% | 1.5714s | 1.6028s | 100         |
+| nw        | matlab-mc2mc                     | 1.7146s | +-0.23% | 1.7098s | 1.7450s | 100         |
+| nw        | matlab-mc2mc-selective-optimized | 1.5638s | +-0.15% | 1.5591s | 1.5761s | 100         |
+| pagerank  | matlab                           | 1.2699s | +-1.90% | 1.2321s | 1.4113s | 100         |
+| pagerank  | matlab-mc2mc                     | 1.4792s | +-0.80% | 1.4555s | 1.5117s | 100         |
+| pagerank  | matlab-mc2mc-selective-optimized | 0.8467s | +-1.35% | 0.8257s | 0.8685s | 100         |
+

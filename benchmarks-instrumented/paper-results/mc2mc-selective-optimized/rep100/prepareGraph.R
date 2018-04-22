@@ -1,4 +1,4 @@
-data <- read.csv("rep5.csv")
+data <- read.csv("rep100.csv")
 data <- data[order(data$benchmark, data$implementation),]
 time <- data$mean
 newdata <- data.frame(backprop=c(time[1]/time[2], time[1]/time[3]),

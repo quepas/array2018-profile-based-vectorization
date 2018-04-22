@@ -1,0 +1,747 @@
+{
+  "results": {
+    "6f60833d98c6f4fa1bc3dede889b4bd6180f545e": {
+      "type": "run",
+      "benchmark": {
+        "short-name": "nw",
+        "type": "benchmark",
+        "name": "Needleman-Wunsch",
+        "description": " Needleman-Wunsch is an algorithm for calculating optimal global alignment of two DNA sequences. All-pairs matching is represented by an NxM 2D matrix. Matrix cells are scored from northwestern-most to southeastern-most, depending solely on northern, northeastern, and eastern neighboring scores. Finally, the algorithm backtracks through the array to return an optimal alignment.  Note: This application was ported from the Rodinia Suite (https://www.cs.virginia.edu/~skadron/wiki/rodinia/).",
+        "version": "0.1.0",
+        "input-size": {
+          "small": {
+            "dimensions": 2048,
+            "penalty": 1
+          },
+          "medium": {
+            "dimensions": 4096,
+            "penalty": 1
+          },
+          "large": {
+            "dimensions": 8192,
+            "penalty": 1
+          }
+        },
+        "random-seed": 1337,
+        "dwarf": "dynamic programming",
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/nw"
+      },
+      "implementation": {
+        "short-name": "matlab",
+        "type": "implementation",
+        "description": "Matlab port of C implementation",
+        "language": "matlab",
+        "core-source-files": [
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/nw/implementations/matlab/needle.m"
+        ],
+        "runner-source-file": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/nw/implementations/matlab/runner.m",
+        "runner-arguments": [
+          4096,
+          1,
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/nw/implementations/matlab/seq1.data",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/nw/implementations/matlab/seq2.data",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/nw/implementations/matlab/nw.data"
+        ],
+        "libraries": [
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/createMatrixFromRandom.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/commonRandomJS.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/commonRandom.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/setRand.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/setRandomSeed.m"
+        ],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/nw/implementations/matlab"
+      },
+      "compiler": {
+        "short-name": "none-matlab",
+        "type": "compiler",
+        "name": "None",
+        "supported-languages": [
+          "matlab"
+        ],
+        "target-languages": [
+          "matlab"
+        ],
+        "runner-name": "runner.m",
+        "commands": [
+          {
+            "executable-path": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/compilers/none-matlab/cat-with-nl",
+            "options": [
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/nw/implementations/matlab/runner.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/nw/implementations/matlab/needle.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/createMatrixFromRandom.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/commonRandomJS.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/commonRandom.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/setRand.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/setRandomSeed.m",
+              ">",
+              "runner.m"
+            ]
+          }
+        ],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/compilers/none-matlab"
+      },
+      "experiment": {
+        "type": "experiment",
+        "short-name": "default",
+        "input-size": "medium",
+        "iteration-number": 100
+      },
+      "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/builds/016e221ab23024e1c760669dfd68af9fdc671e98",
+      "environment": {
+        "short-name": "matlab-vm-2015b-jit",
+        "type": "environment",
+        "name": "MATLAB Virtual Machine",
+        "version": "R2015b (8.6.0.267246) 64-bit (glnxa64)",
+        "supported-languages": [
+          "matlab"
+        ],
+        "supported-formats": [
+          "text"
+        ],
+        "implementation-language": "x86_64",
+        "implementation-format": "binary",
+        "executable-path": "/usr/local/MATLAB/R2015b/bin/matlab",
+        "executable-options": [
+          "-nodesktop",
+          "-nodisplay",
+          "-r"
+        ],
+        "run-script-options": {
+          "matlab-jit": true
+        },
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/environments/matlab-vm-2015b-jit"
+      },
+      "platform": {
+        "short-name": "cri",
+        "type": "platform",
+        "name": "Linux-4.4.0-119-generic-x86_64-with-Ubuntu-16.04-xenial",
+        "cpu": "Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz",
+        "gpu": [
+          "Intel Corporation Sky Lake Integrated Graphics"
+        ],
+        "memory": "15.5545 GB",
+        "os": "Ubuntu 16.04 xenial",
+        "supported-languages": [
+          "x86_64"
+        ],
+        "supported-formats": [
+          "binary"
+        ],
+        "environments": [],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/platforms/cri"
+      },
+      "short-name": "654ad38f2657c0b12b3cacc72979c3dc7cbc9799",
+      "times": [
+        1.571442,
+        1.588269,
+        1.59046,
+        1.58465,
+        1.592349,
+        1.588878,
+        1.589329,
+        1.58915,
+        1.589322,
+        1.592826,
+        1.585631,
+        1.589955,
+        1.591595,
+        1.598032,
+        1.596783,
+        1.586587,
+        1.5915,
+        1.586062,
+        1.586743,
+        1.586974,
+        1.585857,
+        1.585248,
+        1.593403,
+        1.586737,
+        1.591275,
+        1.589691,
+        1.592673,
+        1.591114,
+        1.591361,
+        1.590673,
+        1.591282,
+        1.586292,
+        1.591793,
+        1.591082,
+        1.589477,
+        1.590177,
+        1.585841,
+        1.591212,
+        1.584837,
+        1.588332,
+        1.590294,
+        1.588886,
+        1.590749,
+        1.588423,
+        1.587506,
+        1.584311,
+        1.588986,
+        1.590226,
+        1.585364,
+        1.591139,
+        1.593027,
+        1.584887,
+        1.599501,
+        1.588572,
+        1.589318,
+        1.590113,
+        1.586106,
+        1.588764,
+        1.588412,
+        1.593045,
+        1.588566,
+        1.585293,
+        1.590131,
+        1.591789,
+        1.595462,
+        1.585455,
+        1.591448,
+        1.59362,
+        1.588446,
+        1.589829,
+        1.591131,
+        1.590204,
+        1.592257,
+        1.588657,
+        1.591071,
+        1.590673,
+        1.588638,
+        1.587512,
+        1.589925,
+        1.591252,
+        1.586673,
+        1.591757,
+        1.590217,
+        1.597455,
+        1.591149,
+        1.591894,
+        1.585126,
+        1.589481,
+        1.592285,
+        1.590533,
+        1.601471,
+        1.586596,
+        1.593194,
+        1.59085,
+        1.5952,
+        1.586381,
+        1.591624,
+        1.602817,
+        1.591329,
+        1.58821
+      ],
+      "outputs": [
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.571442
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.588269
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.59046
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.58465
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.592349
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.588878
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.589329
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.58915
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.589322
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.592826
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.585631
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.589955
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591595
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.598032
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.596783
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.586587
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.5915
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.586062
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.586743
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.586974
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.585857
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.585248
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.593403
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.586737
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591275
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.589691
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.592673
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591114
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591361
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.590673
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591282
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.586292
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591793
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591082
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.589477
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.590177
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.585841
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591212
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.584837
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.588332
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.590294
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.588886
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.590749
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.588423
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.587506
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.584311
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.588986
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.590226
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.585364
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591139
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.593027
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.584887
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.599501
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.588572
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.589318
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.590113
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.586106
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.588764
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.588412
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.593045
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.588566
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.585293
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.590131
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591789
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.595462
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.585455
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591448
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.59362
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.588446
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.589829
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591131
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.590204
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.592257
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.588657
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591071
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.590673
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.588638
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.587512
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.589925
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591252
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.586673
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591757
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.590217
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.597455
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591149
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591894
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.585126
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.589481
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.592285
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.590533
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.601471
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.586596
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.593194
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.59085
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.5952
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.586381
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591624
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.602817
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.591329
+        },
+        {
+          "status": 1,
+          "options": "-n 4096 -g 1",
+          "time": 1.58821
+        }
+      ]
+    }
+  },
+  "experiment": {
+    "type": "experiment",
+    "short-name": "default",
+    "input-size": "medium",
+    "iteration-number": 100
+  },
+  "time": "2018-04-22T04:42:38:305+02:00"
+}

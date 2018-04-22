@@ -1,0 +1,638 @@
+{
+  "results": {
+    "f827f2e0576f6829806535cedfa3cced066c6df8": {
+      "type": "run",
+      "benchmark": {
+        "short-name": "backprop",
+        "type": "benchmark",
+        "name": "Back Propagation",
+        "description": "Backpropagation is a common method of training artificial neural networks. The method calculates the gradient of a loss function with respects to all the weights in the network. The gradient is fed to the optimization method which in turn uses it to update the weights, in an attempt to minimize the loss function. Backpropagation requires a known, desired output for each input value in order to calculate the loss function gradient.  The backpropagation learning algorithm is divided into two phases: propagation and weight update.",
+        "version": "0.1.0",
+        "input-size": {
+          "small": 150000,
+          "medium": 2850000,
+          "large": 10000000
+        },
+        "random-seed": 1337,
+        "dwarf": "unstructured grid",
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop"
+      },
+      "implementation": {
+        "short-name": "matlab-mc2mc",
+        "type": "implementation",
+        "description": "Matlab port of C implementation",
+        "language": "matlab",
+        "core-source-files": [
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop/implementations/matlab-mc2mc/bp_core.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop/implementations/matlab-mc2mc/bpnn_adjust_weights.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop/implementations/matlab-mc2mc/bpnn_hidden_error.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop/implementations/matlab-mc2mc/bpnn_layerforward.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop/implementations/matlab-mc2mc/bpnn_output_error.m"
+        ],
+        "runner-source-file": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop/implementations/matlab-mc2mc/runner.m",
+        "runner-arguments": [
+          2850000
+        ],
+        "libraries": [
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/setRandomSeed.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/commonRandom.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/commonRandomJS.m"
+        ],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop/implementations/matlab-mc2mc"
+      },
+      "compiler": {
+        "short-name": "none-matlab",
+        "type": "compiler",
+        "name": "None",
+        "supported-languages": [
+          "matlab"
+        ],
+        "target-languages": [
+          "matlab"
+        ],
+        "runner-name": "runner.m",
+        "commands": [
+          {
+            "executable-path": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/compilers/none-matlab/cat-with-nl",
+            "options": [
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop/implementations/matlab-mc2mc/runner.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop/implementations/matlab-mc2mc/bp_core.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop/implementations/matlab-mc2mc/bpnn_adjust_weights.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop/implementations/matlab-mc2mc/bpnn_hidden_error.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop/implementations/matlab-mc2mc/bpnn_layerforward.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/backprop/implementations/matlab-mc2mc/bpnn_output_error.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/setRandomSeed.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/commonRandom.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/commonRandomJS.m",
+              ">",
+              "runner.m"
+            ]
+          }
+        ],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/compilers/none-matlab"
+      },
+      "experiment": {
+        "type": "experiment",
+        "short-name": "default",
+        "input-size": "medium",
+        "iteration-number": 100
+      },
+      "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/builds/1f25aecf60ed3c323ef12d2cd00d6beb13ad7489",
+      "environment": {
+        "short-name": "matlab-vm-2015b-jit",
+        "type": "environment",
+        "name": "MATLAB Virtual Machine",
+        "version": "R2015b (8.6.0.267246) 64-bit (glnxa64)",
+        "supported-languages": [
+          "matlab"
+        ],
+        "supported-formats": [
+          "text"
+        ],
+        "implementation-language": "x86_64",
+        "implementation-format": "binary",
+        "executable-path": "/usr/local/MATLAB/R2015b/bin/matlab",
+        "executable-options": [
+          "-nodesktop",
+          "-nodisplay",
+          "-r"
+        ],
+        "run-script-options": {
+          "matlab-jit": true
+        },
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/environments/matlab-vm-2015b-jit"
+      },
+      "platform": {
+        "short-name": "cri",
+        "type": "platform",
+        "name": "Linux-4.4.0-119-generic-x86_64-with-Ubuntu-16.04-xenial",
+        "cpu": "Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz",
+        "gpu": [
+          "Intel Corporation Sky Lake Integrated Graphics"
+        ],
+        "memory": "15.5545 GB",
+        "os": "Ubuntu 16.04 xenial",
+        "supported-languages": [
+          "x86_64"
+        ],
+        "supported-formats": [
+          "binary"
+        ],
+        "environments": [],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/platforms/cri"
+      },
+      "short-name": "96e09d91583314007442f0c548572a72085f19c5",
+      "times": [
+        3.0949,
+        3.1007,
+        3.0953,
+        3.1043,
+        3.1,
+        3.0993,
+        3.1001,
+        3.101,
+        3.0847,
+        3.1011,
+        3.1002,
+        3.0985,
+        3.1037,
+        3.0864,
+        3.1022,
+        3.1007,
+        3.7112,
+        3.0922,
+        3.1065,
+        3.0922,
+        3.1043,
+        3.0924,
+        3.1048,
+        3.0988,
+        3.103,
+        3.1012,
+        3.099,
+        3.1005,
+        3.0989,
+        3.0964,
+        3.0909,
+        3.0966,
+        3.0914,
+        3.1001,
+        3.1013,
+        3.0921,
+        3.0998,
+        3.0951,
+        3.095,
+        3.0928,
+        3.0941,
+        3.1019,
+        3.0941,
+        3.103,
+        3.1025,
+        3.1065,
+        3.1041,
+        3.0987,
+        3.1081,
+        3.0991,
+        3.106,
+        3.0993,
+        3.0959,
+        3.0965,
+        3.1006,
+        3.0952,
+        3.0958,
+        3.0981,
+        3.098,
+        3.0984,
+        3.0983,
+        3.0938,
+        3.0964,
+        3.1048,
+        3.1029,
+        3.0948,
+        3.0945,
+        3.0966,
+        3.1048,
+        3.1002,
+        3.1019,
+        3.096,
+        3.1046,
+        3.0941,
+        3.0912,
+        3.0993,
+        3.0947,
+        3.1026,
+        3.0953,
+        3.0944,
+        3.1069,
+        3.1,
+        3.1036,
+        3.0934,
+        3.0962,
+        3.0984,
+        3.0926,
+        3.109,
+        3.0959,
+        3.0955,
+        3.1041,
+        3.0985,
+        3.099,
+        3.0964,
+        3.0934,
+        3.09,
+        3.0998,
+        3.098,
+        3.0963,
+        3.0992
+      ],
+      "outputs": [
+        {
+          "options": 2850000,
+          "time": 3.0949
+        },
+        {
+          "options": 2850000,
+          "time": 3.1007
+        },
+        {
+          "options": 2850000,
+          "time": 3.0953
+        },
+        {
+          "options": 2850000,
+          "time": 3.1043
+        },
+        {
+          "options": 2850000,
+          "time": 3.1
+        },
+        {
+          "options": 2850000,
+          "time": 3.0993
+        },
+        {
+          "options": 2850000,
+          "time": 3.1001
+        },
+        {
+          "options": 2850000,
+          "time": 3.101
+        },
+        {
+          "options": 2850000,
+          "time": 3.0847
+        },
+        {
+          "options": 2850000,
+          "time": 3.1011
+        },
+        {
+          "options": 2850000,
+          "time": 3.1002
+        },
+        {
+          "options": 2850000,
+          "time": 3.0985
+        },
+        {
+          "options": 2850000,
+          "time": 3.1037
+        },
+        {
+          "options": 2850000,
+          "time": 3.0864
+        },
+        {
+          "options": 2850000,
+          "time": 3.1022
+        },
+        {
+          "options": 2850000,
+          "time": 3.1007
+        },
+        {
+          "options": 2850000,
+          "time": 3.7112
+        },
+        {
+          "options": 2850000,
+          "time": 3.0922
+        },
+        {
+          "options": 2850000,
+          "time": 3.1065
+        },
+        {
+          "options": 2850000,
+          "time": 3.0922
+        },
+        {
+          "options": 2850000,
+          "time": 3.1043
+        },
+        {
+          "options": 2850000,
+          "time": 3.0924
+        },
+        {
+          "options": 2850000,
+          "time": 3.1048
+        },
+        {
+          "options": 2850000,
+          "time": 3.0988
+        },
+        {
+          "options": 2850000,
+          "time": 3.103
+        },
+        {
+          "options": 2850000,
+          "time": 3.1012
+        },
+        {
+          "options": 2850000,
+          "time": 3.099
+        },
+        {
+          "options": 2850000,
+          "time": 3.1005
+        },
+        {
+          "options": 2850000,
+          "time": 3.0989
+        },
+        {
+          "options": 2850000,
+          "time": 3.0964
+        },
+        {
+          "options": 2850000,
+          "time": 3.0909
+        },
+        {
+          "options": 2850000,
+          "time": 3.0966
+        },
+        {
+          "options": 2850000,
+          "time": 3.0914
+        },
+        {
+          "options": 2850000,
+          "time": 3.1001
+        },
+        {
+          "options": 2850000,
+          "time": 3.1013
+        },
+        {
+          "options": 2850000,
+          "time": 3.0921
+        },
+        {
+          "options": 2850000,
+          "time": 3.0998
+        },
+        {
+          "options": 2850000,
+          "time": 3.0951
+        },
+        {
+          "options": 2850000,
+          "time": 3.095
+        },
+        {
+          "options": 2850000,
+          "time": 3.0928
+        },
+        {
+          "options": 2850000,
+          "time": 3.0941
+        },
+        {
+          "options": 2850000,
+          "time": 3.1019
+        },
+        {
+          "options": 2850000,
+          "time": 3.0941
+        },
+        {
+          "options": 2850000,
+          "time": 3.103
+        },
+        {
+          "options": 2850000,
+          "time": 3.1025
+        },
+        {
+          "options": 2850000,
+          "time": 3.1065
+        },
+        {
+          "options": 2850000,
+          "time": 3.1041
+        },
+        {
+          "options": 2850000,
+          "time": 3.0987
+        },
+        {
+          "options": 2850000,
+          "time": 3.1081
+        },
+        {
+          "options": 2850000,
+          "time": 3.0991
+        },
+        {
+          "options": 2850000,
+          "time": 3.106
+        },
+        {
+          "options": 2850000,
+          "time": 3.0993
+        },
+        {
+          "options": 2850000,
+          "time": 3.0959
+        },
+        {
+          "options": 2850000,
+          "time": 3.0965
+        },
+        {
+          "options": 2850000,
+          "time": 3.1006
+        },
+        {
+          "options": 2850000,
+          "time": 3.0952
+        },
+        {
+          "options": 2850000,
+          "time": 3.0958
+        },
+        {
+          "options": 2850000,
+          "time": 3.0981
+        },
+        {
+          "options": 2850000,
+          "time": 3.098
+        },
+        {
+          "options": 2850000,
+          "time": 3.0984
+        },
+        {
+          "options": 2850000,
+          "time": 3.0983
+        },
+        {
+          "options": 2850000,
+          "time": 3.0938
+        },
+        {
+          "options": 2850000,
+          "time": 3.0964
+        },
+        {
+          "options": 2850000,
+          "time": 3.1048
+        },
+        {
+          "options": 2850000,
+          "time": 3.1029
+        },
+        {
+          "options": 2850000,
+          "time": 3.0948
+        },
+        {
+          "options": 2850000,
+          "time": 3.0945
+        },
+        {
+          "options": 2850000,
+          "time": 3.0966
+        },
+        {
+          "options": 2850000,
+          "time": 3.1048
+        },
+        {
+          "options": 2850000,
+          "time": 3.1002
+        },
+        {
+          "options": 2850000,
+          "time": 3.1019
+        },
+        {
+          "options": 2850000,
+          "time": 3.096
+        },
+        {
+          "options": 2850000,
+          "time": 3.1046
+        },
+        {
+          "options": 2850000,
+          "time": 3.0941
+        },
+        {
+          "options": 2850000,
+          "time": 3.0912
+        },
+        {
+          "options": 2850000,
+          "time": 3.0993
+        },
+        {
+          "options": 2850000,
+          "time": 3.0947
+        },
+        {
+          "options": 2850000,
+          "time": 3.1026
+        },
+        {
+          "options": 2850000,
+          "time": 3.0953
+        },
+        {
+          "options": 2850000,
+          "time": 3.0944
+        },
+        {
+          "options": 2850000,
+          "time": 3.1069
+        },
+        {
+          "options": 2850000,
+          "time": 3.1
+        },
+        {
+          "options": 2850000,
+          "time": 3.1036
+        },
+        {
+          "options": 2850000,
+          "time": 3.0934
+        },
+        {
+          "options": 2850000,
+          "time": 3.0962
+        },
+        {
+          "options": 2850000,
+          "time": 3.0984
+        },
+        {
+          "options": 2850000,
+          "time": 3.0926
+        },
+        {
+          "options": 2850000,
+          "time": 3.109
+        },
+        {
+          "options": 2850000,
+          "time": 3.0959
+        },
+        {
+          "options": 2850000,
+          "time": 3.0955
+        },
+        {
+          "options": 2850000,
+          "time": 3.1041
+        },
+        {
+          "options": 2850000,
+          "time": 3.0985
+        },
+        {
+          "options": 2850000,
+          "time": 3.099
+        },
+        {
+          "options": 2850000,
+          "time": 3.0964
+        },
+        {
+          "options": 2850000,
+          "time": 3.0934
+        },
+        {
+          "options": 2850000,
+          "time": 3.09
+        },
+        {
+          "options": 2850000,
+          "time": 3.0998
+        },
+        {
+          "options": 2850000,
+          "time": 3.098
+        },
+        {
+          "options": 2850000,
+          "time": 3.0963
+        },
+        {
+          "options": 2850000,
+          "time": 3.0992
+        }
+      ]
+    }
+  },
+  "experiment": {
+    "type": "experiment",
+    "short-name": "default",
+    "input-size": "medium",
+    "iteration-number": 100
+  },
+  "time": "2018-04-22T02:41:31:532+02:00"
+}

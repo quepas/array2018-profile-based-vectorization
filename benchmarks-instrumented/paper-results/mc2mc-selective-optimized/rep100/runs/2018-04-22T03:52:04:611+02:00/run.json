@@ -1,0 +1,739 @@
+{
+  "results": {
+    "4df4633af9cd7c4a164d55ecce1c25a75f77a7e8": {
+      "type": "run",
+      "benchmark": {
+        "short-name": "fft",
+        "type": "benchmark",
+        "name": "Fast Fourier Transform",
+        "description": "Performs the Fast Fourier Transform (FFT) function on a random data set.",
+        "version": "0.1.0",
+        "input-size": {
+          "small": 7,
+          "medium": 8,
+          "large": 9
+        },
+        "random-seed": 1337,
+        "dwarf": "spectral methods",
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/fft"
+      },
+      "implementation": {
+        "short-name": "matlab",
+        "type": "implementation",
+        "description": "Matlab port of C implementation",
+        "language": "matlab",
+        "core-source-files": [
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/fft/implementations/matlab/fft2D.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/fft/implementations/matlab/fftSimple.m"
+        ],
+        "runner-source-file": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/fft/implementations/matlab/runner.m",
+        "runner-arguments": [
+          8
+        ],
+        "runner-argument-types": [
+          "'DOUBLE&1*1&REAL'"
+        ],
+        "libraries": [
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/createMatrixFromRandom.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/commonRandomJS.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/commonRandom.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/setRand.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/setRandomSeed.m"
+        ],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/fft/implementations/matlab"
+      },
+      "compiler": {
+        "short-name": "none-matlab",
+        "type": "compiler",
+        "name": "None",
+        "supported-languages": [
+          "matlab"
+        ],
+        "target-languages": [
+          "matlab"
+        ],
+        "runner-name": "runner.m",
+        "commands": [
+          {
+            "executable-path": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/compilers/none-matlab/cat-with-nl",
+            "options": [
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/fft/implementations/matlab/runner.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/fft/implementations/matlab/fft2D.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/fft/implementations/matlab/fftSimple.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/createMatrixFromRandom.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/commonRandomJS.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/commonRandom.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/setRand.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/implementations/matlab/setRandomSeed.m",
+              ">",
+              "runner.m"
+            ]
+          }
+        ],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/compilers/none-matlab"
+      },
+      "experiment": {
+        "type": "experiment",
+        "short-name": "default",
+        "input-size": "medium",
+        "iteration-number": 100
+      },
+      "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/builds/80eed508a4a6aa35e0b1e16c67e40a3b5869042a",
+      "environment": {
+        "short-name": "matlab-vm-2015b-jit",
+        "type": "environment",
+        "name": "MATLAB Virtual Machine",
+        "version": "R2015b (8.6.0.267246) 64-bit (glnxa64)",
+        "supported-languages": [
+          "matlab"
+        ],
+        "supported-formats": [
+          "text"
+        ],
+        "implementation-language": "x86_64",
+        "implementation-format": "binary",
+        "executable-path": "/usr/local/MATLAB/R2015b/bin/matlab",
+        "executable-options": [
+          "-nodesktop",
+          "-nodisplay",
+          "-r"
+        ],
+        "run-script-options": {
+          "matlab-jit": true
+        },
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/environments/matlab-vm-2015b-jit"
+      },
+      "platform": {
+        "short-name": "cri",
+        "type": "platform",
+        "name": "Linux-4.4.0-119-generic-x86_64-with-Ubuntu-16.04-xenial",
+        "cpu": "Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz",
+        "gpu": [
+          "Intel Corporation Sky Lake Integrated Graphics"
+        ],
+        "memory": "15.5545 GB",
+        "os": "Ubuntu 16.04 xenial",
+        "supported-languages": [
+          "x86_64"
+        ],
+        "supported-formats": [
+          "binary"
+        ],
+        "environments": [],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/platforms/cri"
+      },
+      "short-name": "ffab30778eb1259df14af7e224804467a894b3c9",
+      "times": [
+        0.919776,
+        0.923319,
+        0.900266,
+        0.926951,
+        0.910467,
+        0.906913,
+        0.909763,
+        0.901527,
+        0.904605,
+        0.915535,
+        1.013517,
+        0.947787,
+        0.920539,
+        0.907653,
+        0.981882,
+        0.919318,
+        0.936478,
+        0.971076,
+        0.927838,
+        0.931015,
+        0.909051,
+        0.905049,
+        0.961693,
+        0.951588,
+        0.920993,
+        0.938827,
+        0.904072,
+        1.001513,
+        0.925767,
+        0.924855,
+        0.932661,
+        0.916466,
+        0.927306,
+        1.017468,
+        0.948425,
+        0.902944,
+        0.927796,
+        0.933497,
+        0.903967,
+        0.932648,
+        0.922577,
+        0.902291,
+        1.008343,
+        0.935861,
+        0.912949,
+        0.915394,
+        0.977393,
+        0.901325,
+        0.93616,
+        0.904856,
+        0.902763,
+        0.912167,
+        0.934751,
+        0.907391,
+        0.912424,
+        0.909684,
+        0.920064,
+        0.949381,
+        0.921205,
+        0.930333,
+        0.918569,
+        0.91959,
+        0.955338,
+        0.934457,
+        0.969687,
+        0.947864,
+        0.91688,
+        0.924734,
+        0.920562,
+        0.921203,
+        0.925942,
+        1.001863,
+        0.988374,
+        0.911454,
+        0.903769,
+        0.906908,
+        0.922593,
+        0.93779,
+        0.932249,
+        0.92235,
+        0.911095,
+        0.923332,
+        0.914988,
+        0.903692,
+        0.92045,
+        0.93005,
+        0.916124,
+        0.93455,
+        0.915717,
+        0.912274,
+        0.917222,
+        0.908018,
+        0.921155,
+        0.92536,
+        1.013885,
+        0.918439,
+        0.900196,
+        0.909903,
+        0.919567,
+        0.906221
+      ],
+      "outputs": [
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.919776
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.923319
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.900266
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.926951
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.910467
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.906913
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.909763
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.901527
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.904605
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.915535
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 1.013517
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.947787
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.920539
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.907653
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.981882
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.919318
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.936478
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.971076
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.927838
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.931015
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.909051
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.905049
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.961693
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.951588
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.920993
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.938827
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.904072
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 1.001513
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.925767
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.924855
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.932661
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.916466
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.927306
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 1.017468
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.948425
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.902944
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.927796
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.933497
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.903967
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.932648
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.922577
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.902291
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 1.008343
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.935861
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.912949
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.915394
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.977393
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.901325
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.93616
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.904856
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.902763
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.912167
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.934751
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.907391
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.912424
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.909684
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.920064
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.949381
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.921205
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.930333
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.918569
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.91959
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.955338
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.934457
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.969687
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.947864
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.91688
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.924734
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.920562
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.921203
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.925942
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 1.001863
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.988374
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.911454
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.903769
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.906908
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.922593
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.93779
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.932249
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.92235
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.911095
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.923332
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.914988
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.903692
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.92045
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.93005
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.916124
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.93455
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.915717
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.912274
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.917222
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.908018
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.921155
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.92536
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 1.013885
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.918439
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.900196
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.909903
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.919567
+        },
+        {
+          "status": 1,
+          "options": "8",
+          "time": 0.906221
+        }
+      ]
+    }
+  },
+  "experiment": {
+    "type": "experiment",
+    "short-name": "default",
+    "input-size": "medium",
+    "iteration-number": 100
+  },
+  "time": "2018-04-22T03:52:04:611+02:00"
+}

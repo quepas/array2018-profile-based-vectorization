@@ -1,0 +1,16 @@
+benchmark , implementation                   , mean   , std     , min    , max    , repetitions 
+backprop  , matlab                           , 2.5042 , +-0.62% , 2.4993 , 2.6451 , 100         
+backprop  , matlab-mc2mc                     , 3.1045 , +-1.98% , 3.0847 , 3.7112 , 100         
+backprop  , matlab-mc2mc-selective-optimized , 1.3573 , +-0.18% , 1.3519 , 1.3640 , 100         
+crni      , matlab                           , 3.0689 , +-0.35% , 3.0563 , 3.1297 , 100         
+crni      , matlab-mc2mc                     , 3.7666 , +-1.29% , 3.7399 , 4.2366 , 100         
+fft       , matlab                           , 0.9288 , +-2.95% , 0.9002 , 1.0175 , 100         
+crni      , matlab-mc2mc-selective-optimized , 2.2811 , +-0.62% , 2.2593 , 2.3416 , 100         
+fft       , matlab-mc2mc-selective-optimized , 0.9281 , +-2.46% , 0.8971 , 1.0222 , 100         
+fft       , matlab-mc2mc                     , 1.4622 , +-2.18% , 1.4210 , 1.5827 , 100         
+nw        , matlab                           , 1.5899 , +-0.25% , 1.5714 , 1.6028 , 100         
+nw        , matlab-mc2mc                     , 1.7146 , +-0.23% , 1.7098 , 1.7450 , 100         
+nw        , matlab-mc2mc-selective-optimized , 1.5638 , +-0.15% , 1.5591 , 1.5761 , 100         
+pagerank  , matlab                           , 1.2699 , +-1.90% , 1.2321 , 1.4113 , 100         
+pagerank  , matlab-mc2mc                     , 1.4792 , +-0.80% , 1.4555 , 1.5117 , 100         
+pagerank  , matlab-mc2mc-selective-optimized , 0.8467 , +-1.35% , 0.8257 , 0.8685 , 100         
