@@ -1,0 +1,16 @@
+benchmark , implementation                   , mean  
+backprop  , matlab                           , 2.5271
+backprop  , matlab-mc2mc                     , 3.0961
+backprop  , matlab-mc2mc-selective-optimized , 1.3563
+crni      , matlab                           , 3.0647
+crni      , matlab-mc2mc                     , 3.7666
+crni      , matlab-mc2mc-selective-optimized , 2.2863
+fft       , matlab                           , 0.9185
+fft       , matlab-mc2mc                     , 1.4988
+fft       , matlab-mc2mc-selective-optimized , 0.9196
+nw        , matlab                           , 1.5907
+nw        , matlab-mc2mc                     , 1.7131
+nw        , matlab-mc2mc-selective-optimized , 1.5622
+pagerank  , matlab                           , 1.2498
+pagerank  , matlab-mc2mc                     , 1.4728
+pagerank  , matlab-mc2mc-selective-optimized , 0.8491

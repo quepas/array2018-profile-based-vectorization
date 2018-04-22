@@ -1,0 +1,145 @@
+{
+  "results": {
+    "0cc054942894a66bd97a124549936377bb4fc7d8": {
+      "type": "run",
+      "benchmark": {
+        "short-name": "crni",
+        "type": "benchmark",
+        "name": "Crank-Nicholson",
+        "description": "Compute the Crank-Nicholson solution to the one-dimensional heat equation",
+        "version": "0.1.0",
+        "input-size": {
+          "small": 5,
+          "medium": 7,
+          "large": 9
+        },
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni"
+      },
+      "implementation": {
+        "short-name": "matlab",
+        "type": "implementation",
+        "description": "Matlab implementation for babai",
+        "language": "matlab",
+        "core-source-files": [
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab/crnich.m",
+          "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab/tridiagonal.m"
+        ],
+        "runner-source-file": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab/runner.m",
+        "runner-arguments": [
+          7
+        ],
+        "runner-argument-types": [
+          "'DOUBLE&1*1&REAL'"
+        ],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab"
+      },
+      "compiler": {
+        "short-name": "none-matlab",
+        "type": "compiler",
+        "name": "None",
+        "supported-languages": [
+          "matlab"
+        ],
+        "target-languages": [
+          "matlab"
+        ],
+        "runner-name": "runner.m",
+        "commands": [
+          {
+            "executable-path": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/compilers/none-matlab/cat-with-nl",
+            "options": [
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab/runner.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab/crnich.m",
+              "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/benchmarks/crni/implementations/matlab/tridiagonal.m",
+              ">",
+              "runner.m"
+            ]
+          }
+        ],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/compilers/none-matlab"
+      },
+      "experiment": {
+        "type": "experiment",
+        "short-name": "default",
+        "input-size": "medium",
+        "iteration-number": 5
+      },
+      "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/builds/edc0d19ffa7be7ccb5256ed42e5090c4b0370992",
+      "environment": {
+        "short-name": "matlab-vm-2015b-jit",
+        "type": "environment",
+        "name": "MATLAB Virtual Machine",
+        "version": "R2015b (8.6.0.267246) 64-bit (glnxa64)",
+        "supported-languages": [
+          "matlab"
+        ],
+        "supported-formats": [
+          "text"
+        ],
+        "implementation-language": "x86_64",
+        "implementation-format": "binary",
+        "executable-path": "/usr/local/MATLAB/R2015b/bin/matlab",
+        "executable-options": [
+          "-nodesktop",
+          "-nodisplay",
+          "-r"
+        ],
+        "run-script-options": {
+          "matlab-jit": true
+        },
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/environments/matlab-vm-2015b-jit"
+      },
+      "platform": {
+        "short-name": "cri",
+        "type": "platform",
+        "name": "Linux-4.4.0-119-generic-x86_64-with-Ubuntu-16.04-xenial",
+        "cpu": "Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz",
+        "gpu": [
+          "Intel Corporation Sky Lake Integrated Graphics"
+        ],
+        "memory": "15.5545 GB",
+        "os": "Ubuntu 16.04 xenial",
+        "supported-languages": [
+          "x86_64"
+        ],
+        "supported-formats": [
+          "binary"
+        ],
+        "environments": [],
+        "location": "/home/quepas/PhD/Publications/array2018-vectorization-analysis/benchmarks-instrumented/platforms/cri"
+      },
+      "short-name": "c780c4ae95e244f254ef97fddf883167d61f4d15",
+      "times": [
+        3.0654,
+        3.0641,
+        3.0633,
+        3.0698,
+        3.061
+      ],
+      "outputs": [
+        {
+          "time": 3.0654
+        },
+        {
+          "time": 3.0641
+        },
+        {
+          "time": 3.0633
+        },
+        {
+          "time": 3.0698
+        },
+        {
+          "time": 3.061
+        }
+      ]
+    }
+  },
+  "experiment": {
+    "type": "experiment",
+    "short-name": "default",
+    "input-size": "medium",
+    "iteration-number": 5
+  },
+  "time": "2018-04-22T00:02:21:604+02:00"
+}

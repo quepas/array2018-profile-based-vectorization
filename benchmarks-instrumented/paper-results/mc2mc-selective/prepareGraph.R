@@ -23,14 +23,14 @@ boxplot(time ~ code + benchmark, newdata, bty="n")
 col <- colMeans(data)
 su <- c(col["crni_matlab"]/col["crni_mc2mc"], col["crni_matlab"]/col["crni_mc2mc_selective"], col["nw_matlab"]/col["nw_mc2mc"], col["nw_matlab"]/col["nw_mc2mc_selective"])
 
-par(mfrow=c(1, 1), mar=c(5, 5, 2, 13))
+par(mfrow=c(1, 1), mar=c(5, 10, 2, 13))
 newdata <- data.frame(crni=su[1:2], nw=su[3:4])
 rownames(newdata) <- c("mc2mc", "mc2mc-selective")
 b<-barplot(as.matrix(newdata), 
            beside=T, 
            col=c("#f0f0f0","#bdbdbd"),
-           legend = c("mc2mc", "mc2mc-selective"), 
-           args.legend = list(x ='right', bty='n', cex=1.5, horiz=F, inset=c(-0.6, 0)),
+           legend = c("Systematic", "Selective"), 
+           args.legend = list(x ='right', bty='n', cex=1.5, horiz=F, inset=c(-0.6, 0), title=expression(bold(underline("Strategy"))), title.col="black"),
            xlab = "Benchmark",
            ylab = "Speed-up",
            axes = T,
@@ -39,4 +39,4 @@ b<-barplot(as.matrix(newdata),
            cex.lab=1.5
            )
 abline(a = 1, b= 0, col="gray", lty=5)
-mtext("baseline", col="gray")
+mtext("baseline", col="gray", cex=1.3)
