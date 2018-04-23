@@ -62,9 +62,7 @@ typings/
 /vectorization-intervals/results/*.png
 
 # wu temp stuff
-/benchmarks-instrumented/builds/
-/benchmarks-instrumented/runs/
-/benchmarks-instrumented/.wu/
+.wu/
 
 # R temp
 .RData
