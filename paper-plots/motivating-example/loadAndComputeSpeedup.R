@@ -1,4 +1,4 @@
-loadData <- function(filename) {
+loadAndComputeSpeedup <- function(filename) {
   data <- read.csv(filename, header = FALSE);
   colnames(data) <- c("sample", "loop", "lcpc", "hhm")
   x <- data$sample
