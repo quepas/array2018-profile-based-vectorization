@@ -1,0 +1,85 @@
+### Invariants (configuration parameters that are the same for all runs) ###
+
+| category   | short-name  |
+| ---------- | ----------- |
+| compiler   | none-matlab |
+| platform   | cri         |
+| input-size | medium      |
+
+### Results ###
+
+| benchmark    | implementation | environment            | mean       | std      | min        | max        | repetitions |
+| ------------ | -------------- | ---------------------- | ---------- | -------- | ---------- | ---------- | ----------- |
+| backprop     | matlab         | octave-4.2.1           | 1855.9400s | +-0.08%  | 1854.4000s | 1858.4000s | 5           |
+| backprop     | matlab         | matlab-vm-2013a-no-jit | 155.2196s  | +-2.42%  | 152.0523s  | 159.7833s  | 5           |
+| backprop     | matlab         | matlab-vm-2013a-jit    | 6.7565s    | +-1.14%  | 6.6353s    | 6.8152s    | 5           |
+| backprop     | matlab         | matlab-vm-2015b-jit    | 2.1891s    | +-0.14%  | 2.1865s    | 2.1935s    | 5           |
+| backprop     | matlab-mixed   | octave-4.2.1           | 0.6359s    | +-0.24%  | 0.6343s    | 0.6383s    | 5           |
+| backprop     | matlab-mixed   | matlab-vm-2013a-jit    | 2.5529s    | +-0.52%  | 2.5344s    | 2.5647s    | 5           |
+| backprop     | matlab-mixed   | matlab-vm-2015b-jit    | 2.6968s    | +-8.92%  | 2.5837s    | 3.1272s    | 5           |
+| capr         | matlab         | octave-4.2.1           | 221.2520s  | +-0.10%  | 220.8800s  | 221.4300s  | 5           |
+| capr         | matlab         | matlab-vm-2013a-no-jit | 15.3017s   | +-1.89%  | 15.0122s   | 15.6926s   | 5           |
+| capr         | matlab         | matlab-vm-2013a-jit    | 0.4947s    | +-0.21%  | 0.4940s    | 0.4965s    | 5           |
+| capr         | matlab         | matlab-vm-2015b-jit    | 0.2349s    | +-0.18%  | 0.2343s    | 0.2353s    | 5           |
+| capr         | matlab-mixed   | octave-4.2.1           | 217.1980s  | +-0.19%  | 216.4500s  | 217.4300s  | 5           |
+| capr         | matlab-mixed   | matlab-vm-2013a-no-jit | 14.9738s   | +-1.62%  | 14.7062s   | 15.2839s   | 5           |
+| capr         | matlab-mixed   | matlab-vm-2013a-jit    | 0.5455s    | +-0.64%  | 0.5411s    | 0.5492s    | 5           |
+| capr         | matlab-mixed   | matlab-vm-2015b-jit    | 0.2764s    | +-0.43%  | 0.2753s    | 0.2783s    | 5           |
+| crni         | matlab         | octave-4.2.1           | 2561.3200s | +-0.24%  | 2552.5000s | 2569.3000s | 5           |
+| crni         | matlab         | matlab-vm-2013a-no-jit | 245.3244s  | +-1.62%  | 239.6078s  | 248.6071s  | 5           |
+| crni         | matlab         | matlab-vm-2013a-jit    | 8.1787s    | +-0.78%  | 8.1116s    | 8.2503s    | 5           |
+| crni         | matlab         | matlab-vm-2015b-jit    | 2.9946s    | +-0.67%  | 2.9809s    | 3.0294s    | 5           |
+| crni         | matlab-mixed   | octave-4.2.1           | 1121.0800s | +-0.15%  | 1118.4000s | 1122.7000s | 5           |
+| backprop     | matlab-mixed   | matlab-vm-2013a-no-jit | 2.4706s    | +-0.03%  | 2.4695s    | 2.4713s    | 5           |
+| crni         | matlab-mixed   | matlab-vm-2013a-jit    | 42.4460s   | +-2.04%  | 41.8175s   | 43.9707s   | 5           |
+| crni         | matlab-mixed   | matlab-vm-2013a-no-jit | 115.0552s  | +-3.30%  | 110.5481s  | 118.4410s  | 5           |
+| crni         | matlab-mixed   | matlab-vm-2015b-jit    | 3.6786s    | +-0.56%  | 3.6631s    | 3.7144s    | 5           |
+| mc           | matlab         | octave-4.2.1           | 465.9009s  | +-0.41%  | 463.5234s  | 468.2232s  | 5           |
+| mc           | matlab         | matlab-vm-2013a-jit    | 4.3508s    | +-0.83%  | 4.3116s    | 4.3898s    | 5           |
+| mc           | matlab         | matlab-vm-2013a-no-jit | 98.2949s   | +-1.82%  | 96.4137s   | 101.1585s  | 5           |
+| mc           | matlab         | matlab-vm-2015b-jit    | 1.0926s    | +-0.20%  | 1.0913s    | 1.0965s    | 5           |
+| mc           | matlab-mixed   | octave-4.2.1           | 0.4364s    | +-0.12%  | 0.4359s    | 0.4373s    | 5           |
+| mc           | matlab-mixed   | matlab-vm-2013a-no-jit | 0.7710s    | +-0.31%  | 0.7684s    | 0.7740s    | 5           |
+| mc           | matlab-mixed   | matlab-vm-2013a-jit    | 0.5578s    | +-0.43%  | 0.5557s    | 0.5616s    | 5           |
+| mc           | matlab-mixed   | matlab-vm-2015b-jit    | 0.4924s    | +-0.09%  | 0.4918s    | 0.4931s    | 5           |
+| nw           | matlab         | octave-4.2.1           | 982.8462s  | +-0.15%  | 981.4290s  | 985.4088s  | 5           |
+| nw           | matlab         | matlab-vm-2013a-no-jit | 59.2261s   | +-2.36%  | 57.8483s   | 61.0466s   | 5           |
+| nw           | matlab         | matlab-vm-2015b-jit    | 1.3092s    | +-0.11%  | 1.3081s    | 1.3116s    | 5           |
+| nw           | matlab-mixed   | octave-4.2.1           | 717.7190s  | +-0.28%  | 716.1357s  | 721.1196s  | 5           |
+| nw           | matlab         | matlab-vm-2013a-jit    | 2.7407s    | +-1.19%  | 2.7082s    | 2.7918s    | 5           |
+| nw           | matlab-mixed   | matlab-vm-2013a-no-jit | 40.5507s   | +-1.54%  | 40.0794s   | 41.4827s   | 5           |
+| nw           | matlab-mixed   | matlab-vm-2013a-jit    | 2.1863s    | +-1.23%  | 2.1643s    | 2.2290s    | 5           |
+| nw           | matlab-mixed   | matlab-vm-2015b-jit    | 1.3100s    | +-3.78%  | 1.2861s    | 1.3986s    | 5           |
+| pagerank     | matlab         | matlab-vm-2013a-jit    | 1.3948s    | +-0.38%  | 1.3882s    | 1.4007s    | 5           |
+| pagerank     | matlab         | matlab-vm-2013a-no-jit | 51.6258s   | +-4.60%  | 49.7830s   | 54.3824s   | 5           |
+| pagerank     | matlab         | matlab-vm-2015b-jit    | 1.0777s    | +-0.98%  | 1.0635s    | 1.0893s    | 5           |
+| pagerank     | matlab-mixed   | octave-4.2.1           | 4.0148s    | +-0.16%  | 4.0044s    | 4.0214s    | 5           |
+| pagerank     | matlab-mixed   | matlab-vm-2013a-no-jit | 2.2755s    | +-1.29%  | 2.2398s    | 2.3129s    | 5           |
+| pagerank     | matlab-mixed   | matlab-vm-2015b-jit    | 1.1468s    | +-12.39% | 1.0773s    | 1.4009s    | 5           |
+| fft          | matlab         | octave-4.2.1           | 78.4015s   | +-0.26%  | 78.2351s   | 78.7350s   | 5           |
+| fft          | matlab         | matlab-vm-2013a-no-jit | 10.4305s   | +-5.04%  | 10.0973s   | 11.3114s   | 5           |
+| pagerank     | matlab-mixed   | matlab-vm-2013a-jit    | 1.3077s    | +-2.21%  | 1.2636s    | 1.3437s    | 5           |
+| fft          | matlab         | matlab-vm-2013a-jit    | 2.7033s    | +-0.80%  | 2.6752s    | 2.7351s    | 5           |
+| fft          | matlab         | matlab-vm-2015b-jit    | 0.9253s    | +-2.53%  | 0.9021s    | 0.9615s    | 5           |
+| pagerank     | matlab         | octave-4.2.1           | 520.6052s  | +-0.07%  | 520.1737s  | 521.0489s  | 5           |
+| fft          | matlab-mixed   | matlab-vm-2013a-no-jit | 9.5660s    | +-2.08%  | 9.2952s    | 9.7492s    | 5           |
+| fft          | matlab-mixed   | matlab-vm-2013a-jit    | 5.1055s    | +-1.32%  | 5.0274s    | 5.2045s    | 5           |
+| fft          | matlab-mixed   | matlab-vm-2015b-jit    | 1.4517s    | +-1.37%  | 1.4327s    | 1.4820s    | 5           |
+| fft          | matlab-mixed   | octave-4.2.1           | 70.8604s   | +-0.31%  | 70.6856s   | 71.2377s   | 5           |
+| spmv         | matlab         | matlab-vm-2013a-no-jit | 15.5303s   | +-0.56%  | 15.4322s   | 15.6684s   | 5           |
+| spmv         | matlab         | matlab-vm-2013a-jit    | 0.3220s    | +-0.71%  | 0.3195s    | 0.3246s    | 5           |
+| spmv         | matlab         | matlab-vm-2015b-jit    | 0.2147s    | +-0.21%  | 0.2141s    | 0.2153s    | 5           |
+| spmv         | matlab-mixed   | matlab-vm-2013a-no-jit | 25.8534s   | +-2.55%  | 24.8745s   | 26.4741s   | 5           |
+| spmv         | matlab-mixed   | octave-4.2.1           | 180.2466s  | +-0.48%  | 178.8822s  | 181.0002s  | 5           |
+| spmv         | matlab         | octave-4.2.1           | 125.9228s  | +-0.18%  | 125.7419s  | 126.2690s  | 5           |
+| spmv         | matlab-mixed   | matlab-vm-2015b-jit    | 10.5767s   | +-1.51%  | 10.4280s   | 10.7698s   | 5           |
+| spmv         | matlab-mixed   | matlab-vm-2013a-jit    | 9.5783s    | +-1.95%  | 9.3901s    | 9.8697s    | 5           |
+| blackscholes | matlab         | octave-4.2.1           | 92.3366s   | +-0.85%  | 91.5440s   | 93.4710s   | 5           |
+| blackscholes | matlab         | matlab-vm-2013a-no-jit | 26.1669s   | +-2.39%  | 25.6046s   | 27.0633s   | 5           |
+| blackscholes | matlab         | matlab-vm-2013a-jit    | 3.7506s    | +-2.31%  | 3.6742s    | 3.8943s    | 5           |
+| blackscholes | matlab         | matlab-vm-2015b-jit    | 0.9574s    | +-4.79%  | 0.9219s    | 1.0370s    | 5           |
+| blackscholes | matlab-mixed   | octave-4.2.1           | 0.2648s    | +-0.23%  | 0.2641s    | 0.2657s    | 5           |
+| blackscholes | matlab-mixed   | matlab-vm-2013a-no-jit | 0.1902s    | +-0.18%  | 0.1899s    | 0.1907s    | 5           |
+| blackscholes | matlab-mixed   | matlab-vm-2013a-jit    | 0.1705s    | +-0.28%  | 0.1701s    | 0.1713s    | 5           |
+| blackscholes | matlab-mixed   | matlab-vm-2015b-jit    | 0.1150s    | +-3.43%  | 0.1128s    | 0.1220s    | 5           |
+
