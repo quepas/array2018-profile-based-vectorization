@@ -9,10 +9,10 @@ sample <- crni1$sample[crni1$sample %in% backprop1$sample]
 sample <- sample[seq(5, 128, 8)]
 sample <- unique(sort(c(sample, 97, 113, 145)))
 
-# Modify plot margins
-par(mfrow=c(1, 1), mar=c(5, 5, 2, 5))
 # Save as pdf (A5 format)
 pdf("motivatingExample.pdf", width = 8.27, height = 5.83)
+# Modify plot margins
+par(mfrow=c(1, 1), mar=c(5, 5, 2, 5))
 # Plot the first loop speedup
 plot(sample,
      crni1$su[crni1$sample %in% sample],
