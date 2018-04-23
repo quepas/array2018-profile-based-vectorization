@@ -5,7 +5,7 @@ function runner()
    % Function: pagerank.m
    % Default: {n: 1000}
 
-   resultsDir = '../../paper-results/loops/';
+   resultsDir = '../../results/loops-profiling/';
    % Num. of repated measurements
    rep = 100;
    % Function aggregating data from repeated measurements

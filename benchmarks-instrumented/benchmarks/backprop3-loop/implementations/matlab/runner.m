@@ -14,7 +14,7 @@ function runner()
    % parameterValues = 25000:25000:3200000;
    % rep = 10;
 
-   resultsDir = '../../paper-results/loops/';
+   resultsDir = '../../results/loops-profiling/';
    % Function aggregating data from repeated measurements
    aggregate = @min;
 

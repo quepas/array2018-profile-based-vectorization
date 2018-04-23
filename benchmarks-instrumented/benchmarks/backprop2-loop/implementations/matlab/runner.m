@@ -6,7 +6,7 @@ function runner()
    % Default: {nh: 17, n: 2}
    % Found: {hidden_n+1: 2049}
 
-   resultsDir = '../../paper-results/loops/';
+   resultsDir = '../../results/loops-profiling/';
    % Num. of repated measurements
    rep = 100;
    % Function aggregating data from repeated measurements

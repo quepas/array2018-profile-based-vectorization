@@ -5,7 +5,7 @@ function runner()
    % Function: capacitor.m
    % Default: {n: 8}
 
-   resultsDir = '../../paper-results/loops/';
+   resultsDir = '../../results/loops-profiling/';
    % Num. of repated measurements
    rep = 100;
    % Function aggregating data from repeated measurements

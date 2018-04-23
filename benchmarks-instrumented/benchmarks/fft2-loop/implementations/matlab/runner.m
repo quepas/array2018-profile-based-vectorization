@@ -5,7 +5,7 @@ function runner()
    % Function: fftSimple.m
    % Default: {n: 256, 128, 64, 32, 16, 8, 4, 2}
 
-   resultsDir = '../../paper-results/loops/';
+   resultsDir = '../../results/loops-profiling/';
    % Num. of repated measurements
    rep = 100;
    % Function aggregating data from repeated measurements

@@ -5,7 +5,7 @@ function runner()
    % Function: spmv_core.m
    % Default: {n: [2, 3]}
 
-   resultsDir = '../../paper-results/loops/';
+   resultsDir = '../../results/loops-profiling/';
    %addpath('../../helpers/')
    % Num. of repated measurements
    rep = 100;

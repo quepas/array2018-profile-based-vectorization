@@ -5,7 +5,7 @@ function runner()
    % Function: gauss.m
    % Default: {m: 49, f: [21 x 50]}
 
-   resultsDir = '../../paper-results/loops/';
+   resultsDir = '../../results/loops-profiling/';
    % Num. of repated measurements
    rep = 100;
    % Function aggregating data from repeated measurements

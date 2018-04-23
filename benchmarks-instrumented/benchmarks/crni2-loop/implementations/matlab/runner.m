@@ -5,7 +5,7 @@ function runner()
    % Function: crnich.m
    % Default: {n: 2300, m: 2300}
 
-   resultsDir = '../../paper-results/loops/';
+   resultsDir = '../../results/loops-profiling/';
    % Num. of repated measurements
    rep = 10;
    % Function aggregating data from repeated measurements

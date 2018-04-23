@@ -5,7 +5,7 @@ function runner()
    % Function: bpnn_output_error.m
    % Defaults: {n: 2}
 
-   resultsDir = '../../paper-results/loops/';
+   resultsDir = '../../results/loops-profiling/';
    % Num. of repated measurements
    rep = 100;
    % Function aggregating data from repeated measurements

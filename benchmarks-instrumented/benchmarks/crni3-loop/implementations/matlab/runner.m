@@ -5,7 +5,7 @@ function runner()
    % Function: tridiagonal.m
    % Default: {n: 2300}
 
-   resultsDir = '../../paper-results/loops/';
+   resultsDir = '../../results/loops-profiling/';
    % Num. of repated measurements
    rep = 100;
    % Function aggregating data from repeated measurements
