@@ -1,7 +1,7 @@
 {
     "type": "experiment",
     "short-name": "mc2mc-selective-optimized",
-    "iteration-number": 5,
+    "iteration-number": 100,
     "input-size": "medium",
     "configuration": {
         "implementations": [
