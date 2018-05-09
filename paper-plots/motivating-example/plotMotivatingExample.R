@@ -16,7 +16,7 @@ par(mfrow=c(1, 1), mar=c(5, 5, 2, 5))
 # Plot the first loop speedup
 plot(sample,
      crni1$su[crni1$sample %in% sample],
-     xlab="Iterations / Data size",
+     xlab="Iterations",
      xlim=c(0, 2000),
      ylab="Speedup",
      type="b",
