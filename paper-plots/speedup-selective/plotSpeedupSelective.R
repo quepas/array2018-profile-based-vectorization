@@ -1,6 +1,7 @@
-data <- read.csv("../../paper-results/speedup-selective/results_100rep.csv")
+data <- read.csv("../../paper-results/speedup-selective/results.csv")
 # Aggregate the repeated measurements with mean value
-dataAggregate <- colMeans(data)
+#dataAggregate <- colMeans(data)
+dataAggregate <- apply(data, 2, min)
 # Compute speedups of vectorized code with systematic and selective strategy
 speedups <- data.frame(crni=c(dataAggregate["crni_matlab"]/dataAggregate["crni_mc2mc"],
                               dataAggregate["crni_matlab"]/dataAggregate["crni_mc2mc_selective"]),

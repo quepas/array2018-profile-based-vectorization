@@ -1,6 +1,7 @@
 data <- read.csv("../../paper-results/speedup-selective-optimized/results.csv")
 # Aggregate the repeated measurements with mean value
-dataAggregate <- colMeans(data)
+#dataAggregate <- colMeans(data)
+dataAggregate <- apply(data, 2, min)
 # Compute speedups of optimized vectorized code with systematic and selective strategy
 speedups <- data.frame(backprop=c(dataAggregate["backprop_matlab"]/dataAggregate["backprop_mc2mc"],
                                  dataAggregate["backprop_matlab"]/dataAggregate["backprop_mc2mc_selective"]),
