@@ -38,8 +38,8 @@ legend(1100,
        pt.cex=2,
        bty = "n")
 # Plot baseline
-abline(1, 0, col="gray", lty=5)
+abline(1, 0, col="gray", lty=1)
 # ... with a text !
-text(1000, 1.04, "baseline", col="gray", cex=1.2)
+text(1000, 1.04, "Baseline", col="gray", cex=1.25)
 # Finish plotting
 dev.off()

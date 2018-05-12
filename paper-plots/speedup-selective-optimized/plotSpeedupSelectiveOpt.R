@@ -36,8 +36,8 @@ barplot(as.matrix(speedups),
                            inset=c(0.15, -0.05),
                            title=expression(bold(underline("Strategy"))), title.col="black"))
 # Plot baseline
-abline(a = 1, b= 0, col="gray", lty=5)
+abline(a = 1, b= 0, col="gray", lty=1)
 # ... with a text !
-text(8.7, 1.06, "baseline", col="gray", cex=1.2)
+text(8.7, 1.06, "Baseline", col="gray", cex=1.25)
 # Finish plotting
 dev.off()
