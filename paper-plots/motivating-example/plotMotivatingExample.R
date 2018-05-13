@@ -10,13 +10,13 @@ sample <- sample[seq(5, 128, 8)]
 sample <- unique(sort(c(sample, 97, 113, 145)))
 
 # Save as pdf (A5 format)
-pdf("motivatingExample.pdf", width = 8.27, height = 5.83)
+pdf("motivatingExample.pdf", width = 8.27, height = 5.83, useDingbats = F)
 # Modify plot margins
 par(mfrow=c(1, 1), mar=c(5, 5, 2, 5))
 # Plot the first loop speedup
 plot(sample,
      crni1$su[crni1$sample %in% sample],
-     xlab="Iterations",
+     xlab="Iterations (data size)",
      xlim=c(0, 2000),
      ylab="Speedup",
      type="b",
@@ -26,13 +26,13 @@ plot(sample,
      cex=2,
      frame.plot = F)
 # Plot the second loop speedup
-lines(sample, backprop1$su[backprop1$sample %in% sample], pch=10, type="b", cex=2)
+lines(sample, backprop1$su[backprop1$sample %in% sample], pch=1, type="b", cex=2)
 # Add legend to the plot
 legend(1100,
        0.7,
        legend=c("crni1", "backprop1"),
        title=expression(bold(underline("Loop"))),
-       pch=c(2, 10),
+       pch=c(2, 1),
        lty=1,
        cex=1.5,
        pt.cex=2,
@@ -43,3 +43,4 @@ abline(1, 0, col="gray", lty=1)
 text(1000, 1.04, "Baseline", col="gray", cex=1.25)
 # Finish plotting
 dev.off()
+embedFonts("motivatingExample.pdf")

@@ -34,3 +34,4 @@ abline(a = 1, b= 0, col="gray", lty=1)
 mtext("Baseline", col="gray", cex=1.25)
 # Finish plotting
 dev.off()
+embedFonts("mc2mc-selective.pdf")

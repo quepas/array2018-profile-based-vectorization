@@ -14,7 +14,7 @@ speedups <- data.frame(backprop=c(dataAggregate["backprop_matlab"]/dataAggregate
                       pagerank=c(dataAggregate["pagerank_matlab"]/dataAggregate["pagerank_mc2mc"],
                                  dataAggregate["pagerank_matlab"]/dataAggregate["pagerank_mc2mc_selective"]))
 # Save as pdf (A5 format)
-pdf("mc2mc-optimized.pdf", width = 8.27, height = 5.83)
+pdf("mc2mc-optimized.pdf", width = 8.27, height = 5.83, family = "sans")
 # Modify plot margins
 par(mfrow=c(1, 1), mar=c(5, 5, 2, 5))
 # Plot vectorization strategies comparison
@@ -41,3 +41,4 @@ abline(a = 1, b= 0, col="gray", lty=1)
 text(8.7, 1.06, "Baseline", col="gray", cex=1.25)
 # Finish plotting
 dev.off()
+embedFonts("mc2mc-optimized.pdf")
